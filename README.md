@@ -1,4 +1,4 @@
-# Team_21 - Get Your Pet
+# Team 21 - Get Your Pet
 
 <p>An application where pet owners, animal shelters and vets can search or report missing pets.</p>
 
