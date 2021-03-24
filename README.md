@@ -1,14 +1,15 @@
-# Team_21
+# Team_21 - Get Your Pet
 
-Team roles
-Product Owner: Ismael Ibrahim 
-Scrum Master: Christopher Oser
-Senior Dev: Michael Streibl
-Dev: Denis Tomic
-Dev: Emil Winterleitner
-Dev: Namik Barucija
-Dev: Sabrina Hiden
-Dev: missing
+<p>An application where pet owners, animal shelters and vets can search or report missing pets.</p>
 
-Get your pet
-An application where pet owners, animal shelters and vets can search or report missing pets.
+
+<h1>Team roles</h1>
+
+* Product Owner: Ismael Ibrahim 
+* Scrum Master: Christopher Oser
+* Senior Developer : Michael Streibl
+* Developer: Denis Tomic
+* Developer: Emil Winterleitner
+* Developer: Namik Barucija
+* Developer: Sabrina Hiden
+* Developer: missing
