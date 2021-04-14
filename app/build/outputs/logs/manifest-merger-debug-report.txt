@@ -1,0 +1,208 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1e8ec5a5794d62a62ae5211cb09e3baa/navigation-fragment-ktx-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/39eb8416ed6a16c82384e0963a3e51ee/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/cc70cbb670f014a21ccb7298f81d51ea/navigation-ui-ktx-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/c621f44879bba34ab90527d3c6ccb1be/navigation-runtime-ktx-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/574ed83add4bc5cb287cbe03d7218f08/jetified-activity-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/61de809703a2a1e14091a9bafadab894/jetified-core-ktx-1.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/dbe32cf971ca7ec5f103024db4e87818/jetified-lifecycle-livedata-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/ae35bd10052963549cbcc9415cbc1752/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/8a85460efdec633d3bd281681d9e05cd/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/798831da3c0f1bfdbdc44ccf16fab72f/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/644dc4698f0ea86c4cb0165d897a0a8c/navigation-common-ktx-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/43b9e51dd959e9a9485af291637f244b/navigation-ui-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/80b413aab89323937aff31fb014405b2/material-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/85975fb849275fb3fa937922937bf5af/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b8b4d96e8d6847c06a5d41365fc933b/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.navigation:navigation-fragment:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/974fa750affdaaeb59c4ffc07e95f753/navigation-fragment-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1f88e858817170548a1ae9bd06713de4/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/aa777a657adebf8374befed6d55d6040/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b55ba90756f30ab613f9f97d24283776/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/5e8b7319b365b734e8a480afbef5a2e7/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/85e1ea5e4e17570671794c4c777cd76e/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/9c5938e28116dcc93af9efb7330ffb62/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/54efc5d9b780c0cd34b7bc7531e92b96/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.2.4] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/866cb94752fc5bcc6ed5ceb0d82c4448/fragment-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/7c0aebb12c0abc122dcb989eaa829722/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/762449142213b3cab828c5c2693cc8b9/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/91638e054147c6b673b7ad1482760013/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/e8b96ed99fef3acf679011bfa5c4c8b0/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/220a4823848b5aa5efe724ea1ff464a9/navigation-runtime-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/4169ae4ef92429283327f7aa71c553ae/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/7e5203684ce103ceea00b25654a56455/navigation-common-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0252a566203edc3743f685ec75f3d94e/core-1.2.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b2c214e72cf0f7522377ff1a6f63d1a/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1b4a2b441348a3b5ddad029de8f88b3c/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/5e6dcf00a69c991382cc66c510dcaf30/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/04447e0ba99fd2497db4cdc20966144c/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b65942ebbaf6eabbc4fbbaa61b0401a2/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/f1ed8b7f0b2a0c42804a530936d1e0c6/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/3b889f1a9acc5a8725daaeba5e3873c9/lifecycle-livedata-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/9381694c86ff7924abfb4df3a1c3818f/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/f6def168ecc0c900fa1faa67de35156f/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/3a8046dea4e6b66a6b7921f9665f3cdb/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/bd0a65e480e5019a417b799a6e47c573/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:5:5-22:19
+MERGED from [com.google.android.material:material:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/80b413aab89323937aff31fb014405b2/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/80b413aab89323937aff31fb014405b2/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b8b4d96e8d6847c06a5d41365fc933b/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b8b4d96e8d6847c06a5d41365fc933b/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0252a566203edc3743f685ec75f3d94e/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0252a566203edc3743f685ec75f3d94e/core-1.2.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b65942ebbaf6eabbc4fbbaa61b0401a2/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b65942ebbaf6eabbc4fbbaa61b0401a2/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0252a566203edc3743f685ec75f3d94e/core-1.2.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:11:9-46
+activity#com.example.getmypet.MainActivity
+ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:12:9-21:20
+	android:label
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:14:13-45
+	android:theme
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:15:13-62
+	android:name
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:13:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:16:13-20:29
+action#android.intent.action.MAIN
+ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml:19:27-74
+uses-sdk
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1e8ec5a5794d62a62ae5211cb09e3baa/navigation-fragment-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1e8ec5a5794d62a62ae5211cb09e3baa/navigation-fragment-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/39eb8416ed6a16c82384e0963a3e51ee/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/39eb8416ed6a16c82384e0963a3e51ee/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/cc70cbb670f014a21ccb7298f81d51ea/navigation-ui-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/cc70cbb670f014a21ccb7298f81d51ea/navigation-ui-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/c621f44879bba34ab90527d3c6ccb1be/navigation-runtime-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/c621f44879bba34ab90527d3c6ccb1be/navigation-runtime-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/574ed83add4bc5cb287cbe03d7218f08/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/574ed83add4bc5cb287cbe03d7218f08/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/61de809703a2a1e14091a9bafadab894/jetified-core-ktx-1.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/61de809703a2a1e14091a9bafadab894/jetified-core-ktx-1.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/dbe32cf971ca7ec5f103024db4e87818/jetified-lifecycle-livedata-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/dbe32cf971ca7ec5f103024db4e87818/jetified-lifecycle-livedata-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/ae35bd10052963549cbcc9415cbc1752/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/ae35bd10052963549cbcc9415cbc1752/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/8a85460efdec633d3bd281681d9e05cd/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/8a85460efdec633d3bd281681d9e05cd/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/798831da3c0f1bfdbdc44ccf16fab72f/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/798831da3c0f1bfdbdc44ccf16fab72f/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/644dc4698f0ea86c4cb0165d897a0a8c/navigation-common-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/644dc4698f0ea86c4cb0165d897a0a8c/navigation-common-ktx-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/43b9e51dd959e9a9485af291637f244b/navigation-ui-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/43b9e51dd959e9a9485af291637f244b/navigation-ui-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/80b413aab89323937aff31fb014405b2/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/80b413aab89323937aff31fb014405b2/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/85975fb849275fb3fa937922937bf5af/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/85975fb849275fb3fa937922937bf5af/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b8b4d96e8d6847c06a5d41365fc933b/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b8b4d96e8d6847c06a5d41365fc933b/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.navigation:navigation-fragment:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/974fa750affdaaeb59c4ffc07e95f753/navigation-fragment-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/974fa750affdaaeb59c4ffc07e95f753/navigation-fragment-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1f88e858817170548a1ae9bd06713de4/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1f88e858817170548a1ae9bd06713de4/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/aa777a657adebf8374befed6d55d6040/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/aa777a657adebf8374befed6d55d6040/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b55ba90756f30ab613f9f97d24283776/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b55ba90756f30ab613f9f97d24283776/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/5e8b7319b365b734e8a480afbef5a2e7/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/5e8b7319b365b734e8a480afbef5a2e7/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/85e1ea5e4e17570671794c4c777cd76e/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/85e1ea5e4e17570671794c4c777cd76e/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/9c5938e28116dcc93af9efb7330ffb62/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/9c5938e28116dcc93af9efb7330ffb62/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/54efc5d9b780c0cd34b7bc7531e92b96/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/54efc5d9b780c0cd34b7bc7531e92b96/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/866cb94752fc5bcc6ed5ceb0d82c4448/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/866cb94752fc5bcc6ed5ceb0d82c4448/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/7c0aebb12c0abc122dcb989eaa829722/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/7c0aebb12c0abc122dcb989eaa829722/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/762449142213b3cab828c5c2693cc8b9/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/762449142213b3cab828c5c2693cc8b9/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/91638e054147c6b673b7ad1482760013/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/91638e054147c6b673b7ad1482760013/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/e8b96ed99fef3acf679011bfa5c4c8b0/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/e8b96ed99fef3acf679011bfa5c4c8b0/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/220a4823848b5aa5efe724ea1ff464a9/navigation-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/220a4823848b5aa5efe724ea1ff464a9/navigation-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/4169ae4ef92429283327f7aa71c553ae/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/4169ae4ef92429283327f7aa71c553ae/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/7e5203684ce103ceea00b25654a56455/navigation-common-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.2.2] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/7e5203684ce103ceea00b25654a56455/navigation-common-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0252a566203edc3743f685ec75f3d94e/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0252a566203edc3743f685ec75f3d94e/core-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b2c214e72cf0f7522377ff1a6f63d1a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/0b2c214e72cf0f7522377ff1a6f63d1a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1b4a2b441348a3b5ddad029de8f88b3c/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/1b4a2b441348a3b5ddad029de8f88b3c/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/5e6dcf00a69c991382cc66c510dcaf30/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/5e6dcf00a69c991382cc66c510dcaf30/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/04447e0ba99fd2497db4cdc20966144c/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/04447e0ba99fd2497db4cdc20966144c/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b65942ebbaf6eabbc4fbbaa61b0401a2/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/b65942ebbaf6eabbc4fbbaa61b0401a2/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/f1ed8b7f0b2a0c42804a530936d1e0c6/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/f1ed8b7f0b2a0c42804a530936d1e0c6/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/3b889f1a9acc5a8725daaeba5e3873c9/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/3b889f1a9acc5a8725daaeba5e3873c9/lifecycle-livedata-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/9381694c86ff7924abfb4df3a1c3818f/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/9381694c86ff7924abfb4df3a1c3818f/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/f6def168ecc0c900fa1faa67de35156f/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/f6def168ecc0c900fa1faa67de35156f/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/3a8046dea4e6b66a6b7921f9665f3cdb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/3a8046dea4e6b66a6b7921f9665f3cdb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/bd0a65e480e5019a417b799a6e47c573/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/winterleitner/.gradle/caches/transforms-2/files-2.1/bd0a65e480e5019a417b799a6e47c573/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+		ADDED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/src/main/AndroidManifest.xml

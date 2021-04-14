@@ -1,0 +1,2 @@
+com/example/getmypet/BuildConfig.java
+ com.example.getmypet.BuildConfig
