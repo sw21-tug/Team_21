@@ -1,9 +1,13 @@
 
 ### Pairing Matrix
 Dev 1: Michael Streibl
+
 Dev 2: Emil Winterleitner
+
 Dev 3: Denis Tomic
+
 Dev 4: Namik Barucija
+
 Dev 5: Sabrina Hiden
 
 
