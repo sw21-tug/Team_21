@@ -25,9 +25,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:autofillHints="@string/login_username_sample"
+        android:autofillHints="@string/register_username_sample"
         android:ems="10"
-        android:hint="@string/login_username_sample"
+        android:hint="@string/register_username_sample"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -88,7 +88,7 @@
         android:text="@string/register_password"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PhoneNumerEditTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberEditText" />
 
     <EditText
         android:id="@+id/firstNameEditText"
@@ -136,7 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/firstNameEditText" />
 
     <EditText
-        android:id="@+id/PhoneNumerEditTextPhone"
+        android:id="@+id/phoneNumberEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
