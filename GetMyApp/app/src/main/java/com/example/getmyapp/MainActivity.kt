@@ -2,6 +2,7 @@ package com.example.getmyapp
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.ImageButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -23,15 +24,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
+        /*
+        IF NEEDED FOR FUTURE IMPLEMENTATION OF LISTENERS ETC.
+        val imageButtonFoundPets: ImageButton = findViewById(R.id.imageButtonFoundPets)
+        val imageButtonLostPets: ImageButton = findViewById(R.id.imageButtonLostPets)
+        */
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
