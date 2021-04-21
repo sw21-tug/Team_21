@@ -14,6 +14,10 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import android.widget.Toast
+import androidx.fragment.app.FragmentManager
+import com.example.getmyapp.ui.gallery.GalleryFragment
+import com.example.getmyapp.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,13 +31,26 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
-        /*
-        IF NEEDED FOR FUTURE IMPLEMENTATION OF LISTENERS ETC.
-        val imageButtonFoundPets: ImageButton = findViewById(R.id.imageButtonFoundPets)
-        val imageButtonLostPets: ImageButton = findViewById(R.id.imageButtonLostPets)
-        */
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        /*FOR FUTURE FUNCTIONALITY IMPLEMENTATION
+        val imageButtonFoundPets: ImageButton = findViewById(R.id.imageButtonFoundPets)
+        val imageButtonLostPets: ImageButton =  findViewById(R.id.imageButtonLostPets)
+        imageButtonFoundPets.setOnClickListener {
+            val fragmentFound = FoundFragment() //temporary name
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
+            transaction.replace(R.id.nav_host_fragment, fragmentFound)
+            transaction.commit()
+        }
+        imageButtonLostPets.setOnClickListener {
+            val fragmentLost = LostFragment() //temporary name
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
+            transaction.replace(R.id.nav_host_fragment, fragmentLost)
+            transaction.commit()
+        }*/
+
         appBarConfiguration = AppBarConfiguration(setOf(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
