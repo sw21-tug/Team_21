@@ -1,5 +1,6 @@
 package com.example.getmyapp.ui.login
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.LayoutInflater
@@ -7,14 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.room.Room
 import com.example.getmyapp.R
+import com.example.getmyapp.database.AppDatabase
+import com.example.getmyapp.database.User
 import org.bouncycastle.crypto.generators.SCrypt
 import java.nio.ByteBuffer
 import java.nio.CharBuffer
 import java.nio.charset.StandardCharsets
 import java.security.SecureRandom
 import java.util.*
+
+import com.example.getmyapp.database.UserDao
 
 
 class RegisterFragment : Fragment() {
@@ -41,7 +48,8 @@ class RegisterFragment : Fragment() {
         return root
     }
 
-    private fun getInputData() {
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getInputData() {
         val root = requireView()
 
         val usernameEditText = root.findViewById<EditText>(R.id.usernameInputEditText)
@@ -67,6 +75,8 @@ class RegisterFragment : Fragment() {
         passwordConfirmationEditText.text.getChars(0, passwordConfirmationLength, passwordConfirmation, 0)
 
         var correctInputFlag = true
+
+
 
         if (username.isEmpty()) {
             usernameEditText.error = "Username is mandatory"
@@ -104,8 +114,31 @@ class RegisterFragment : Fragment() {
             correctInputFlag = false
         }
 
-        if (!correctInputFlag)
+        if (!correctInputFlag) {
             return
+        }
+
+        val checker = Thread(Runnable {
+            val db = Room.databaseBuilder(
+                requireActivity().applicationContext,
+                AppDatabase::class.java, "database-name"
+            ).build()
+
+            val userDao = db.userDao()
+            val users: List<User> = userDao.getAll()
+
+            if (users.find { user -> user.name.equals(username.toString()) } != null) {
+                correctInputFlag = false
+            }
+        })
+
+        checker.start()
+        checker.join()
+
+        if (!correctInputFlag) {
+            usernameEditText.error = "User name is already in use"
+            return
+        }
 
         passwordEditText.setText("")
         passwordConfirmationEditText.setText("")
@@ -122,10 +155,58 @@ class RegisterFragment : Fragment() {
         Arrays.fill(password, '\u0000')
         Arrays.fill(passwordByteArray, 0.toByte())
 
+        Thread(Runnable {
+            val db = Room.databaseBuilder(
+                requireActivity().applicationContext,
+                AppDatabase::class.java, "database-name"
+            ).build()
+
+            val userDao = db.userDao()
+
+            userDao.insertAll(User(username.toString(), firstName.toString(), lastName.toString(),
+                mailAddress.toString(), phoneNumber.toString(),
+                Base64.getEncoder().encodeToString(hashedPassword),
+                Base64.getEncoder().encodeToString(salt)))
+        }).start()
     }
 
-    private fun charsToBytes(chars: CharArray): ByteArray {
+    fun charsToBytes(chars: CharArray): ByteArray {
         val byteBuffer: ByteBuffer = StandardCharsets.UTF_8.encode(CharBuffer.wrap(chars))
         return Arrays.copyOf(byteBuffer.array(), byteBuffer.limit())
+    }
+
+    fun deleteTestUser(user: String) {
+        Thread(Runnable {
+            val db = Room.databaseBuilder(
+                requireActivity().applicationContext,
+                AppDatabase::class.java, "database-name"
+            ).build()
+
+            val userDao = db.userDao()
+
+            userDao.deleteByPK(user)
+        }).start()
+    }
+
+    fun getTestUser(user: String): User? {
+        var testUser: User? = null
+
+        val t1 = Thread(Runnable {
+            val db = Room.databaseBuilder(
+                requireActivity().applicationContext,
+                AppDatabase::class.java, "database-name"
+            ).build()
+
+            val userDao = db.userDao()
+
+            testUser = userDao.getUser(user)
+
+
+        })
+
+        t1.start()
+        t1.join()
+
+        return testUser
     }
 }
