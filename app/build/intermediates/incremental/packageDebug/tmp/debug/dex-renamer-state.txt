@@ -1,4 +1,0 @@
-#Wed Apr 14 10:37:56 CEST 2021
-base.0=/Users/winterleitner/Documents/TUGraz/SEM04/Agile Software Development/Team_21/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
