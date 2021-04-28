@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GetMyApp</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -10,4 +11,57 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_missing">Missing</string>
+
+
+    <string name="title_missing">Missing</string>
+    <string name="search_missing">Region, Colour ,Type , Race</string>
+    <string name="search_missing_title"> Search for Pets</string>
+    <string name="missing_preview">Preview 1</string>
+
+    <string name="animal_species_missing">Animal Species</string>
+    <string-array name="animal_species">
+        <item>Dog</item>
+        <item>Cat</item>
+        <item>Rabbit</item>
+        <item>Bird</item>
+    </string-array>
+    <string name="colour_missing">Colour</string>
+    <string-array name="colours">
+        <item>Brown</item>
+        <item>Black</item>
+        <item>White</item>
+        <item>Black Tri</item>
+        <item>Blond</item>
+        <item>Yellow</item>
+        <item>Grey</item>
+    </string-array>
+
+    <string name="region_missing">Region</string>
+    <string-array name="regions_missing">
+        <item>Burgenland</item>
+        <item>Kärnten</item>
+        <item>Niederösterreich</item>
+        <item>Oberösterreich</item>
+        <item>Salzburg</item>
+        <item>Steiermark</item>
+        <item>Tirol</item>
+        <item>Vorarlberg</item>
+        <item>Wien</item>
+    </string-array>
+
+    <string name="breed">Breed</string>
+    <string name="Pet_Missing">Name of the Pet</string>
+    <string name="example_name_missing">Waldi</string>
+    <string name="pet_spezies_sample">Dog</string>
+    <string name="sample_species">Spezies : Dog</string>
+    <string name="species">Species</string>
+    <string name="Breed">Breed</string>
+    <string name="sample_breed">Australian Shepherd</string>
+    <string name="Colour">Colour</string>
+    <string name="sample_colour">grey</string>
+    <string name="last_seen">Last Seen</string>
+    <string name="sample_seen">01.01.2000</string>
+
+
 </resources>
