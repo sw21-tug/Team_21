@@ -10,9 +10,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_login">Login</string>
     <string name="menu_register">Sign Up</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="menu_missing">Missing</string>
+    <string name="menu_found">Found</string>
+    <string name="menu_about_us">About Us</string>
+    <string name="menu_donate">Donate</string>
 
     <string name="login_header">Login</string>
     <string name="login_username">Username:</string>

@@ -25,12 +25,12 @@ class MissingFragment : Fragment() {
         missingViewModel =
                 ViewModelProvider(this).get(MissingViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_missing, container, false)
-        val textView: TextView = root.findViewById(R.id.title_missing)
-        val textView2: TextView = root.findViewById(R.id.search_missing_title)
-        val textView3: TextView = root.findViewById(R.id.missing_breed)
-        val textView4: TextView = root.findViewById(R.id.missing_region)
-        val textView5: TextView = root.findViewById(R.id.missing_colour)
-        val textView6: TextView = root.findViewById(R.id.missing_species)
+        //val textView: TextView = root.findViewById(R.id.title_missing)
+        //val textView2: TextView = root.findViewById(R.id.search_missing_title)
+        //val textView3: TextView = root.findViewById(R.id.missing_breed)
+        //val textView4: TextView = root.findViewById(R.id.missing_region)
+        //val textView5: TextView = root.findViewById(R.id.missing_colour)
+        //val textView6: TextView = root.findViewById(R.id.missing_species)
         val species = resources.getStringArray(R.array.animal_species)
         val spinner = root.findViewById<Spinner>(R.id.spinner)
         if (spinner != null) {
@@ -55,9 +55,9 @@ class MissingFragment : Fragment() {
             spinner3.adapter = adapter
         }
 
-        missingViewModel.text.observe(viewLifecycleOwner, Observer {
+        /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
         return root
     }
 }
