@@ -34,6 +34,8 @@
     <string name="register_confirm_password_sample">Confirm Password*</string>
     <string name="register_button">SIGN UP</string>
 
+    <string name="home_title_missing">Missing Pets</string>
+    <string name="home_title_found">Found Pets</string>
 
     <string name="title_missing">Missing</string>
     <string name="search_missing">Region, Colour ,Type , Race</string>

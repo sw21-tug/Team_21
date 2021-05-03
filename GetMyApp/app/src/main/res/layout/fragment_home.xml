@@ -7,16 +7,16 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/textViewLostPets"
+        android:id="@+id/textViewMissingPets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Lost Pets"
+        android:text="@string/home_title_missing"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButtonLostPets"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonMissingPets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,18 +24,19 @@
         app:layout_constraintVertical_bias="0.95" />
 
     <ImageButton
-        android:id="@+id/imageButtonLostPets"
+        android:id="@+id/imageButtonMissingPets"
         android:layout_width="match_parent"
         android:layout_height="100pt"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:src="@drawable/sample_data_pets"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageButtonFoundPets"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.20"
-        tools:src="@drawable/sample_data_pets" />
+        android:contentDescription="@string/home_title_missing"/>
 
     <TextView
         android:id="@+id/textViewFoundPets"
@@ -45,13 +46,13 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Found Pets"
+        android:text="@string/home_title_found"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButtonFoundPets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonLostPets"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonMissingPets"
         app:layout_constraintVertical_bias="0.95" />
 
     <ImageButton
@@ -66,5 +67,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9"
-        tools:src="@drawable/sample_data_pets" />
+        android:src="@drawable/sample_data_pets"
+        android:contentDescription="@string/home_title_found"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
