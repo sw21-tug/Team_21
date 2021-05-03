@@ -42,7 +42,7 @@
 
     <string name="animal_species_missing">Animal Species</string>
     <string-array name="animal_species">
-        <item>Select species</item>
+        <item>Select Species</item>
         <item>Dog</item>
         <item>Cat</item>
         <item>Rabbit</item>
@@ -50,7 +50,7 @@
     </string-array>
     <string name="colour_missing">Colour</string>
     <string-array name="colours">
-        <item>Select colour </item>
+        <item>Select Colour </item>
         <item>Brown</item>
         <item>Black</item>
         <item>White</item>

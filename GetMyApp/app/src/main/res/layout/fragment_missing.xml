@@ -36,8 +36,8 @@
         android:layout_marginTop="16dp"
         android:text="@string/region_missing"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/searchView2"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintStart_toEndOf="@+id/breedSearchView"
+        app:layout_constraintTop_toBottomOf="@+id/speciesSpinner" />
 
     <TextView
         android:id="@+id/missing_breed"
@@ -48,10 +48,10 @@
         android:text="@string/breed"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/speciesSpinner" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/nameSearchView"
         android:layout_width="227dp"
         android:layout_height="24dp"
         android:layout_marginStart="24dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/search_missing_title" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/speciesSpinner"
         android:layout_width="170dp"
         android:layout_height="24dp"
         android:layout_marginStart="24dp"
@@ -69,21 +69,21 @@
         app:layout_constraintTop_toBottomOf="@+id/missing_species" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/colorSpinner"
         android:layout_width="170dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toEndOf="@+id/speciesSpinner"
         app:layout_constraintTop_toBottomOf="@+id/missing_colour" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/regionSpinner"
         android:layout_width="170dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/searchView2"
+        app:layout_constraintStart_toEndOf="@+id/breedSearchView"
         app:layout_constraintTop_toBottomOf="@+id/missing_region" />
 
     <TextView
@@ -95,7 +95,7 @@
         android:text="@string/animal_species_missing"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/nameSearchView" />
 
     <TextView
         android:id="@+id/missing_colour"
@@ -105,11 +105,11 @@
         android:layout_marginTop="16dp"
         android:text="@string/colour_missing"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintStart_toEndOf="@+id/speciesSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/nameSearchView" />
 
     <SearchView
-        android:id="@+id/searchView2"
+        android:id="@+id/breedSearchView"
         android:layout_width="170dp"
         android:layout_height="24dp"
         android:layout_marginStart="24dp"
@@ -127,6 +127,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2" />
+        app:layout_constraintTop_toBottomOf="@+id/breedSearchView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

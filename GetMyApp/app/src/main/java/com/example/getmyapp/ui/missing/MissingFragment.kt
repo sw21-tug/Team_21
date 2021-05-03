@@ -30,27 +30,27 @@ class MissingFragment : Fragment() {
         val textView: TextView = root.findViewById(R.id.title_missing)
 
         val species = resources.getStringArray(R.array.animal_species)
-        val spinner = root.findViewById<Spinner>(R.id.spinner)
-        if (spinner != null) {
+        val speciesSpinner = root.findViewById<Spinner>(R.id.speciesSpinner)
+        if (speciesSpinner != null) {
             val adapter = ArrayAdapter(requireActivity(),
                     android.R.layout.simple_spinner_item, species)
-            spinner.adapter = adapter
+            speciesSpinner.adapter = adapter
         }
 
         val colour = resources.getStringArray(R.array.colours)
-        val spinner2 = root.findViewById<Spinner>(R.id.spinner2)
-        if (spinner2 != null) {
+        val colourSpinner = root.findViewById<Spinner>(R.id.colorSpinner)
+        if (colourSpinner != null) {
             val adapter = ArrayAdapter(requireActivity(),
                     android.R.layout.simple_spinner_item, colour)
-            spinner2.adapter = adapter
+            colourSpinner.adapter = adapter
         }
 
         val region = resources.getStringArray(R.array.regions_missing)
-        val spinner3 = root.findViewById<Spinner>(R.id.spinner3)
-        if (spinner3 != null) {
+        val regionSpinner = root.findViewById<Spinner>(R.id.regionSpinner)
+        if (regionSpinner != null) {
             val adapter = ArrayAdapter(requireActivity(),
                     android.R.layout.simple_spinner_item, region)
-            spinner3.adapter = adapter
+            regionSpinner.adapter = adapter
         }
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
