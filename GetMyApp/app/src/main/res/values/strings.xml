@@ -37,11 +37,12 @@
 
     <string name="title_missing">Missing</string>
     <string name="search_missing">Region, Colour ,Type , Race</string>
-    <string name="search_missing_title"> Search for Pets</string>
+    <string name="search_missing_title"> Search for pet name</string>
     <string name="missing_preview">Preview 1</string>
 
     <string name="animal_species_missing">Animal Species</string>
     <string-array name="animal_species">
+        <item>Select species</item>
         <item>Dog</item>
         <item>Cat</item>
         <item>Rabbit</item>
@@ -49,6 +50,7 @@
     </string-array>
     <string name="colour_missing">Colour</string>
     <string-array name="colours">
+        <item>Select colour </item>
         <item>Brown</item>
         <item>Black</item>
         <item>White</item>
@@ -60,6 +62,7 @@
 
     <string name="region_missing">Region</string>
     <string-array name="regions_missing">
+        <item>Select Province</item>
         <item>Burgenland</item>
         <item>Kärnten</item>
         <item>Niederösterreich</item>
