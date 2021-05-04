@@ -27,6 +27,7 @@ import com.example.getmyapp.database.UserDao
 class RegisterFragment : Fragment() {
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -79,38 +80,38 @@ class RegisterFragment : Fragment() {
 
 
         if (username.isEmpty()) {
-            usernameEditText.error = "Username is mandatory"
+            usernameEditText.error = activity?.resources?.getString(R.string.register_error_username)
             correctInputFlag = false
         }
 
         if (mailAddress.isEmpty()) {
-            mailAddressEditText.error = "Mail Address is mandatory"
+            mailAddressEditText.error = activity?.resources?.getString(R.string.register_error_mail)
             correctInputFlag = false
         }
 
         if (password.isEmpty()) {
-            passwordEditText.error = "Password is mandatory"
+            passwordEditText.error = activity?.resources?.getString(R.string.register_error_password)
             correctInputFlag = false
         }
 
         if (passwordConfirmation.isEmpty()) {
-            passwordConfirmationEditText.error = "Password is mandatory"
+            passwordConfirmationEditText.error = activity?.resources?.getString(R.string.register_error_password)
             correctInputFlag = false
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(mailAddress).matches()) {
-            mailAddressEditText.error = "Not a valid mail address"
+            mailAddressEditText.error = activity?.resources?.getString(R.string.register_error_mail_valid)
             correctInputFlag = false
         }
 
         if (!(password contentEquals passwordConfirmation)) {
-            passwordEditText.error = "Passwords do not match"
-            passwordConfirmationEditText.error = "Passwords do not match"
+            passwordEditText.error = activity?.resources?.getString(R.string.register_error_password_match)
+            passwordConfirmationEditText.error = activity?.resources?.getString(R.string.register_error_password_match)
             correctInputFlag = false
         }
 
         if (phoneNumber.isNotEmpty() && !Patterns.PHONE.matcher(phoneNumber).matches()) {
-            phoneNumberEditText.error = "Not a valid phone number"
+            phoneNumberEditText.error = activity?.resources?.getString(R.string.register_error_phone)
             correctInputFlag = false
         }
 
@@ -136,7 +137,7 @@ class RegisterFragment : Fragment() {
         checker.join()
 
         if (!correctInputFlag) {
-            usernameEditText.error = "User name is already in use"
+            usernameEditText.error = activity?.resources?.getString(R.string.register_error_username_in_use)
             return
         }
 
