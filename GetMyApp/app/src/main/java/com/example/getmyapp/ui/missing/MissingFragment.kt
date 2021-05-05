@@ -58,7 +58,7 @@ class MissingFragment : Fragment() {
 
         val samplePet = arrayOf("Waldi", "Dog", "Australian Shepherd", "Grey", "01.01.2021")
         val samplePet2 = arrayOf("Katzi", "Katze", "Mischling", "Black", "01.01.2020")
-        recyclerView.adapter = MissingAdapter(arrayOf(samplePet, samplePet2, samplePet, samplePet2))
+        recyclerView.adapter = MissingAdapter(arrayOf(samplePet, samplePet2))
 
         missingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
