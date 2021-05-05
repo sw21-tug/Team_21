@@ -22,9 +22,16 @@ import java.security.SecureRandom
 import java.util.*
 
 import com.example.getmyapp.database.UserDao
+import com.google.firebase.database.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 
 class RegisterFragment : Fragment() {
+
+    private lateinit var databaseUsers: DatabaseReference
+
+    private lateinit var listOfUsers: ArrayList<User>
 
 
     override fun onCreateView(
@@ -38,12 +45,16 @@ class RegisterFragment : Fragment() {
 //            textView.text = it
 //        })
 
-
         val registerButton = root.findViewById<Button>(R.id.registerButton)
         registerButton.setOnClickListener {
             getInputData()
         }
 
+        databaseUsers = FirebaseDatabase.getInstance().getReference("Users")
+
+        databaseUsers.addValueEventListener(userListener)
+
+        listOfUsers = ArrayList<User>()
 
         return root
     }
@@ -118,22 +129,9 @@ class RegisterFragment : Fragment() {
             return
         }
 
-        val checker = Thread(Runnable {
-            val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
-            ).build()
-
-            val userDao = db.userDao()
-            val users: List<User> = userDao.getAll()
-
-            if (users.find { user -> user.name.equals(username.toString()) } != null) {
-                correctInputFlag = false
-            }
-        })
-
-        checker.start()
-        checker.join()
+        if (listOfUsers.find { user -> user.name.equals(username.toString()) } != null) {
+            correctInputFlag = false
+        }
 
         if (!correctInputFlag) {
             usernameEditText.error = "User name is already in use"
@@ -155,19 +153,16 @@ class RegisterFragment : Fragment() {
         Arrays.fill(password, '\u0000')
         Arrays.fill(passwordByteArray, 0.toByte())
 
-        Thread(Runnable {
-            val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
-            ).build()
+        val userId = databaseUsers.push().key
 
-            val userDao = db.userDao()
+        val user = User(userId.toString(), username.toString(), firstName.toString(), lastName.toString(),
+            mailAddress.toString(), phoneNumber.toString(),
+            Base64.getEncoder().encodeToString(hashedPassword),
+            Base64.getEncoder().encodeToString(salt))
 
-            userDao.insertAll(User(username.toString(), firstName.toString(), lastName.toString(),
-                mailAddress.toString(), phoneNumber.toString(),
-                Base64.getEncoder().encodeToString(hashedPassword),
-                Base64.getEncoder().encodeToString(salt)))
-        }).start()
+        if (userId != null) {
+            databaseUsers.child(userId).setValue(user)
+        }
     }
 
     fun charsToBytes(chars: CharArray): ByteArray {
@@ -175,37 +170,52 @@ class RegisterFragment : Fragment() {
         return Arrays.copyOf(byteBuffer.array(), byteBuffer.limit())
     }
 
-    fun deleteTestUser(user: String) {
-        Thread(Runnable {
-            val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
-            ).build()
+    val userListener = object : ValueEventListener {
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            val users: HashMap<String, HashMap<String, String>>? = dataSnapshot.getValue() as HashMap<String, HashMap<String, String>>?
 
-            val userDao = db.userDao()
+            if (users != null) {
+                listOfUsers.clear()              // make sure list is always cleared
 
-            userDao.deleteByPK(user)
-        }).start()
+                for ((key, value) in users) {
+                    val name = value["name"]
+                    if (name != null) {
+                        val user: User = User(
+                            key, name, value["firstName"], value["lastName"], value["mailAddress"],
+                            value["phoneNumber"], value["hash"], value["salt"]
+                        )
+                        listOfUsers.add(user)
+                    }
+                }
+            }
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+            // Getting Post failed
+        }
     }
 
-    fun getTestUser(user: String): User? {
+    fun deleteTestUser(userName: String) {
+        var userInDB: User? = null
+
+        for (user in listOfUsers) {
+            if (userName == user.name)
+                userInDB = user
+        }
+
+        if (userInDB != null) {
+            var testUser = databaseUsers.child(userInDB.userId)
+            testUser.removeValue()
+        }
+    }
+
+    fun getTestUser(userName: String): User? {
         var testUser: User? = null
 
-        val t1 = Thread(Runnable {
-            val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
-            ).build()
-
-            val userDao = db.userDao()
-
-            testUser = userDao.getUser(user)
-
-
-        })
-
-        t1.start()
-        t1.join()
+        for (user in listOfUsers) {
+            if (user.name == userName)
+                testUser = user
+        }
 
         return testUser
     }
