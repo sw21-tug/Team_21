@@ -64,7 +64,7 @@
     </string-array>
     <string name="colour_missing">Colour</string>
     <string-array name="colours">
-        <item>Select Colour </item>
+        <item>Select Colour</item>
         <item>Brown</item>
         <item>Black</item>
         <item>White</item>

@@ -17,17 +17,13 @@ import com.example.getmyapp.R
 
 class MissingFragment : Fragment() {
 
-    private lateinit var missingViewModel: MissingViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        missingViewModel =
-                ViewModelProvider(this).get(MissingViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_missing, container, false)
-        val textView: TextView = root.findViewById(R.id.title_missing)
 
         val species = resources.getStringArray(R.array.animal_species)
         val speciesSpinner = root.findViewById<Spinner>(R.id.speciesSpinner)
@@ -60,9 +56,6 @@ class MissingFragment : Fragment() {
         val samplePet2 = arrayOf("Katzi", "Katze", "Mischling", "Black", "01.01.2020")
         recyclerView.adapter = MissingAdapter(arrayOf(samplePet, samplePet2))
 
-        missingViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 }
