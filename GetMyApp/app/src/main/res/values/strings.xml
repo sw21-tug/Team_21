@@ -10,9 +10,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_login">Login</string>
     <string name="menu_register">Sign Up</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="menu_missing">Missing</string>
+    <string name="menu_found">Found</string>
+    <string name="menu_about_us">About Us</string>
+    <string name="menu_donate">Donate</string>
 
     <string name="login_header">Login</string>
     <string name="login_username">Username:</string>
@@ -34,6 +35,8 @@
     <string name="register_confirm_password_sample">Confirm Password*</string>
     <string name="register_button">SIGN UP</string>
 
+    <string name="home_title_missing">Missing Pets</string>
+    <string name="home_title_found">Found Pets</string>
 
     <string name="title_missing">Missing</string>
     <string name="search_missing">Region, Colour ,Type , Race</string>
