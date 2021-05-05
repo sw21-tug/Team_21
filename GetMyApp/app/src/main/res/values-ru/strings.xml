@@ -16,7 +16,7 @@
     <string name="login_header">Авторизоваться</string>
     <string name="sample_breed">Австралийская овчарка</string>
     <string name="Breed">Порода</string>
-    <string name="species">Разновидность</string>
+    <string name="species">Разнов</string>
     <string name="pet_spezies_sample">Собака</string>
     <string name="sample_species">Spezies : Dog</string>
     <string name="example_name_missing">Waldi</string>
@@ -59,17 +59,19 @@
     <string name="action_settings">Настройки</string>
     <string name="sample_colour">серый</string>
     <string name="Colour">Цвет</string>
-    <string name="last_seen">Последний визит</string>
+    <string name="last_seen">Послед</string>
     <string name="sample_seen">01.01.2000</string>
     <string name="lang_en">English</string>
     <string name="lang_ru">русский</string>
     <string-array name="animal_species">
+        <item>Выберите вид</item>
         <item>Собака</item>
         <item>Кот</item>
         <item>Кролик</item>
         <item>Птица</item>
     </string-array>
     <string-array name="colours">
+        <item>Выберите цвет</item>
         <item>коричневый</item>
         <item>Чернить</item>
         <item>белый</item>
@@ -78,4 +80,18 @@
         <item>Желтый</item>
         <item>Серый</item>
     </string-array>
+
+    <string-array name="regions_missing">
+        <item>Выберите провинцию</item>
+        <item>Burgenland</item>
+        <item>Kärnten</item>
+        <item>Niederösterreich</item>
+        <item>Oberösterreich</item>
+        <item>Salzburg</item>
+        <item>Steiermark</item>
+        <item>Tirol</item>
+        <item>Vorarlberg</item>
+        <item>Wien</item>
+    </string-array>
+
 </resources>

@@ -10,9 +10,10 @@
         android:id="@+id/title_missing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/title_missing"
-        android:textSize="36sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/search_missing_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_missing" />
@@ -31,12 +32,12 @@
         android:id="@+id/missing_region"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/region_missing"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintStart_toEndOf="@+id/breedSearchView"
+        app:layout_constraintTop_toBottomOf="@+id/speciesSpinner" />
 
     <TextView
         android:id="@+id/missing_breed"
@@ -47,10 +48,10 @@
         android:text="@string/breed"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/speciesSpinner" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/nameSearchView"
         android:layout_width="227dp"
         android:layout_height="24dp"
         android:layout_marginStart="24dp"
@@ -59,33 +60,30 @@
         app:layout_constraintTop_toBottomOf="@+id/search_missing_title" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/speciesSpinner"
         android:layout_width="170dp"
-        android:layout_height="22dp"
+        android:layout_height="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/spinner2"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/missing_species" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/colorSpinner"
         android:layout_width="170dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="170dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/speciesSpinner"
         app:layout_constraintTop_toBottomOf="@+id/missing_colour" />
 
     <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="169dp"
+        android:id="@+id/regionSpinner"
+        android:layout_width="170dp"
         android:layout_height="24dp"
-        android:layout_marginStart="204dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/breedSearchView"
         app:layout_constraintTop_toBottomOf="@+id/missing_region" />
 
     <TextView
@@ -97,151 +95,38 @@
         android:text="@string/animal_species_missing"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/nameSearchView" />
 
     <TextView
         android:id="@+id/missing_colour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/colour_missing"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.385"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintStart_toEndOf="@+id/speciesSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/nameSearchView" />
 
     <SearchView
-        android:layout_width="165dp"
-        android:layout_height="25dp"
+        android:id="@+id/breedSearchView"
+        android:layout_width="170dp"
+        android:layout_height="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/missing_breed" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/example_name_missing"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/species"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Breed"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Colour"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/last_seen"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/pet_spezies_sample"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/sample_breed"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/sample_colour"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/sample_seen"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:src="@drawable/dog_sample"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        tools:ignore="ContentDescription"
-        app:layout_constraintTop_toTopOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="355dp"
-        android:layout_height="174dp"
-        android:layout_marginTop="36dp"
-        android:background="@color/cardview_shadow_end_color"
-        android:gravity="start|end"
-        android:text="@string/missing_preview"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/missingPetsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner3"
-        app:strokeColor="@color/white" />
+        app:layout_constraintTop_toBottomOf="@+id/breedSearchView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
