@@ -19,7 +19,7 @@ class MissingFragmentUITest {
     @Test
     @Throws(Exception::class)
     fun initMissingOverview() {
-        val scenario = launchFragmentInContainer<MissingFragment>()
+        launchFragmentInContainer<MissingFragment>()
 
         onView(withId(R.id.speciesSpinner)).check(matches(withSpinnerText("Select Species")))
         onView(withId(R.id.colorSpinner)).check(matches(withSpinnerText("Select Colour")))
@@ -30,6 +30,5 @@ class MissingFragmentUITest {
 
         onView(RecyclerViewMatcher(R.id.missingPetsRecyclerView).atPosition(1))
                 .check(matches(hasDescendant(withText("Katzi"))))
-
     }
 }
