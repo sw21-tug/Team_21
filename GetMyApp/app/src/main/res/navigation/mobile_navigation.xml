@@ -29,4 +29,9 @@
         android:name="com.example.getmyapp.ui.login.RegisterFragment"
         android:label="@string/menu_register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/nav_changelang"
+        android:name="com.example.getmyapp.ui.changelang.ChangelangFragment"
+        android:label="@string/menu_changelang"
+        tools:layout="@layout/fragment_changelang" />
 </navigation>
