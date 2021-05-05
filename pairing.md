@@ -17,4 +17,4 @@ Dev 5: Sabrina Hiden
 | Dev 2       | HH:MM       | 08:00       | 08:00       | 02:30       | HH:MM       |
 | Dev 3       | 08:00       | 08:00       | 08:00       | HH:MM       | HH:MM       |
 | Dev 4       | 08:00       | 02:30       | HH:MM       | X           | 08:00       |
-| Dev 5       | 04:00       | HH:MM       | HH:MM       | 08:00       | X           |
+| Dev 5       | 04:00       | HH:MM       | HH:MM       | 08:00       | 08:00       |
