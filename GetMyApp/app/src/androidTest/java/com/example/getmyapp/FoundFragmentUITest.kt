@@ -24,11 +24,5 @@ class FoundFragmentUITest {
         onView(withId(R.id.speciesSpinner)).check(matches(withSpinnerText("Select Species")))
         onView(withId(R.id.colorSpinner)).check(matches(withSpinnerText("Select Colour")))
         onView(withId(R.id.regionSpinner)).check(matches(withSpinnerText("Select Province")))
-
-        onView(RecyclerViewMatcher(R.id.foundPetsRecyclerView).atPosition(0))
-                .check(matches(hasDescendant(withText("Waldi"))))
-
-        onView(RecyclerViewMatcher(R.id.foundPetsRecyclerView).atPosition(1))
-                .check(matches(hasDescendant(withText("Katzi"))))
     }
 }
