@@ -14,6 +14,7 @@
     <string name="menu_found">Found</string>
     <string name="menu_about_us">About Us</string>
     <string name="menu_donate">Donate</string>
+    <string name="menu_changelang">Change Language</string>
 
     <string name="login_header">Login</string>
     <string name="login_username">Username:</string>
@@ -35,23 +36,38 @@
     <string name="register_confirm_password_sample">Confirm Password*</string>
     <string name="register_button">SIGN UP</string>
 
+    <string name="error_username">Username is mandatory</string>
+    <string name="register_error_username_in_use">User name is already in use</string>
+    <string name="register_error_mail">Mail address is mandatory</string>
+    <string name="register_error_mail_valid">Not a valid mail address</string>
+    <string name="error_password">Password is mandatory</string>
+    <string name="register_error_password_match">Passwords do not match</string>
+    <string name="register_error_phone">Not a valid phone number</string>
+
     <string name="home_title_missing">Missing Pets</string>
     <string name="home_title_found">Found Pets</string>
 
     <string name="title_missing">Missing</string>
+    <string name="title_found">Found</string>
     <string name="search_missing">Region, Colour ,Type , Race</string>
-    <string name="search_missing_title"> Search for Pets</string>
+    <string name="search_found">Region, Colour ,Type , Race</string>
+    <string name="search_missing_title"> Search for pet name</string>
+    <string name="search_found_title"> Search for pet name</string>
     <string name="missing_preview">Preview 1</string>
+    <string name="found_preview">Preview 1</string>
 
-    <string name="animal_species_missing">Animal Species</string>
-    <string-array name="animal_species">
+    <string name="animal_species">Animal Species</string>
+    <string-array name="animal_species_array">
+        <item>Select Species</item>
         <item>Dog</item>
         <item>Cat</item>
         <item>Rabbit</item>
         <item>Bird</item>
     </string-array>
-    <string name="colour_missing">Colour</string>
-    <string-array name="colours">
+
+    <string name="colour">Colour</string>
+    <string-array name="colours_array">
+        <item>Select Colour</item>
         <item>Brown</item>
         <item>Black</item>
         <item>White</item>
@@ -61,8 +77,9 @@
         <item>Grey</item>
     </string-array>
 
-    <string name="region_missing">Region</string>
-    <string-array name="regions_missing">
+    <string name="region">Region</string>
+    <string-array name="regions_array">
+        <item>Select Province</item>
         <item>Burgenland</item>
         <item>Kärnten</item>
         <item>Niederösterreich</item>
@@ -76,9 +93,9 @@
 
     <string name="breed">Breed</string>
     <string name="Pet_Missing">Name of the Pet</string>
-    <string name="example_name_missing">Waldi</string>
+    <string name="example_name">Waldi</string>
     <string name="pet_spezies_sample">Dog</string>
-    <string name="sample_species">Spezies : Dog</string>
+    <string name="sample_species">Species : Dog</string>
     <string name="species">Species</string>
     <string name="Breed">Breed</string>
     <string name="sample_breed">Australian Shepherd</string>
@@ -87,5 +104,11 @@
     <string name="last_seen">Last Seen</string>
     <string name="sample_seen">01.01.2000</string>
 
+    <string name="lang_en">English</string>
+    <string name="lang_ru">русский</string>
 
+    <string name="login_error_username">User does not exist</string>
+    <string name="login_error_password">Incorrect Password</string>
+
+    <string name="action_user">User</string>
 </resources>
