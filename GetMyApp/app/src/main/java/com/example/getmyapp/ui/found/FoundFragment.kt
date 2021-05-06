@@ -1,4 +1,6 @@
-package com.example.getmyapp.ui.missing
+package com.example.getmyapp.ui.found
+
+import com.example.getmyapp.ui.missing.MissingAdapter
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,21 +14,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 
 
-class MissingFragment : Fragment() {
+class FoundFragment : Fragment() {
 
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_missing, container, false)
+        val root = inflater.inflate(R.layout.fragment_found, container, false)
 
         val species = resources.getStringArray(R.array.animal_species_array)
         val speciesSpinner = root.findViewById<Spinner>(R.id.speciesSpinner)
         if (speciesSpinner != null) {
             val adapter = ArrayAdapter(requireActivity(),
-                    android.R.layout.simple_spinner_item, species)
+                android.R.layout.simple_spinner_item, species)
             speciesSpinner.adapter = adapter
         }
 
@@ -34,7 +36,7 @@ class MissingFragment : Fragment() {
         val colourSpinner = root.findViewById<Spinner>(R.id.colorSpinner)
         if (colourSpinner != null) {
             val adapter = ArrayAdapter(requireActivity(),
-                    android.R.layout.simple_spinner_item, colour)
+                android.R.layout.simple_spinner_item, colour)
             colourSpinner.adapter = adapter
         }
 
@@ -42,11 +44,11 @@ class MissingFragment : Fragment() {
         val regionSpinner = root.findViewById<Spinner>(R.id.regionSpinner)
         if (regionSpinner != null) {
             val adapter = ArrayAdapter(requireActivity(),
-                    android.R.layout.simple_spinner_item, region)
+                android.R.layout.simple_spinner_item, region)
             regionSpinner.adapter = adapter
         }
 
-        val recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
+        val recyclerView = root.findViewById<RecyclerView>(R.id.foundPetsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(root.context)
 
         val samplePet = arrayOf("Waldi", "Dog", "Australian Shepherd", "Grey", "01.01.2021")
