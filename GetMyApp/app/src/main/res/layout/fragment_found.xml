@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.missing.MissingFragment">
+    tools:context=".ui.found.FoundFragment">
 
     <TextView
-        android:id="@+id/title_missing"
+        android:id="@+id/title_found"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/title_missing"
+        android:text="@string/title_found"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,17 +19,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/search_missing_title"
+        android:id="@+id/search_found_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="@string/search_missing_title"
+        android:text="@string/search_found_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_missing" />
+        app:layout_constraintTop_toBottomOf="@+id/title_found" />
 
     <TextView
-        android:id="@+id/missing_region"
+        android:id="@+id/found_region"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/speciesSpinner" />
 
     <TextView
-        android:id="@+id/missing_breed"
+        android:id="@+id/found_breed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -57,7 +57,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_missing_title" />
+        app:layout_constraintTop_toBottomOf="@+id/search_found_title" />
 
     <Spinner
         android:id="@+id/speciesSpinner"
@@ -66,7 +66,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/missing_species" />
+        app:layout_constraintTop_toBottomOf="@+id/found_species" />
 
     <Spinner
         android:id="@+id/colorSpinner"
@@ -75,7 +75,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/speciesSpinner"
-        app:layout_constraintTop_toBottomOf="@+id/missing_colour" />
+        app:layout_constraintTop_toBottomOf="@+id/found_colour" />
 
     <Spinner
         android:id="@+id/regionSpinner"
@@ -84,10 +84,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/breedSearchView"
-        app:layout_constraintTop_toBottomOf="@+id/missing_region" />
+        app:layout_constraintTop_toBottomOf="@+id/found_region" />
 
     <TextView
-        android:id="@+id/missing_species"
+        android:id="@+id/found_species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameSearchView" />
 
     <TextView
-        android:id="@+id/missing_colour"
+        android:id="@+id/found_colour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -115,10 +115,10 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/missing_breed" />
+        app:layout_constraintTop_toBottomOf="@+id/found_breed" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/missingPetsRecyclerView"
+        android:id="@+id/foundPetsRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"

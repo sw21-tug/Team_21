@@ -44,26 +44,29 @@
     <string name="register_error_password_match">Passwords do not match</string>
     <string name="register_error_phone">Not a valid phone number</string>
 
-
-
     <string name="home_title_missing">Missing Pets</string>
     <string name="home_title_found">Found Pets</string>
 
     <string name="title_missing">Missing</string>
+    <string name="title_found">Found</string>
     <string name="search_missing">Region, Colour ,Type , Race</string>
+    <string name="search_found">Region, Colour ,Type , Race</string>
     <string name="search_missing_title"> Search for pet name</string>
+    <string name="search_found_title"> Search for pet name</string>
     <string name="missing_preview">Preview 1</string>
+    <string name="found_preview">Preview 1</string>
 
-    <string name="animal_species_missing">Animal Species</string>
-    <string-array name="animal_species">
+    <string name="animal_species">Animal Species</string>
+    <string-array name="animal_species_array">
         <item>Select Species</item>
         <item>Dog</item>
         <item>Cat</item>
         <item>Rabbit</item>
         <item>Bird</item>
     </string-array>
-    <string name="colour_missing">Colour</string>
-    <string-array name="colours">
+
+    <string name="colour">Colour</string>
+    <string-array name="colours_array">
         <item>Select Colour</item>
         <item>Brown</item>
         <item>Black</item>
@@ -74,8 +77,8 @@
         <item>Grey</item>
     </string-array>
 
-    <string name="region_missing">Region</string>
-    <string-array name="regions_missing">
+    <string name="region">Region</string>
+    <string-array name="regions_array">
         <item>Select Province</item>
         <item>Burgenland</item>
         <item>Kärnten</item>
@@ -90,7 +93,7 @@
 
     <string name="breed">Breed</string>
     <string name="Pet_Missing">Name of the Pet</string>
-    <string name="example_name_missing">Waldi</string>
+    <string name="example_name">Waldi</string>
     <string name="pet_spezies_sample">Dog</string>
     <string name="sample_species">Species : Dog</string>
     <string name="species">Species</string>

@@ -19,16 +19,20 @@
     <string name="species">Разнов</string>
     <string name="pet_spezies_sample">Собака</string>
     <string name="sample_species">Spezies : Dog</string>
-    <string name="example_name_missing">Waldi</string>
+    <string name="example_name">Waldi</string>
     <string name="Pet_Missing">Имя питомца</string>
     <string name="breed">Порода</string>
-    <string name="region_missing">Область, край</string>
-    <string name="colour_missing">Цвет</string>
-    <string name="animal_species_missing">Виды животных</string>
+    <string name="region">Область, край</string>
+    <string name="colour">Цвет</string>
+    <string name="animal_species">Виды животных</string>
     <string name="search_missing_title">Поиск домашних животных</string>
+    <string name="search_found_title">Поиск по имени питомца</string>
     <string name="missing_preview">Предварительный просмотр 1</string>
+    <string name="found_preview">Предварительный просмотр 1</string>
     <string name="search_missing">Регион, Цвет, Тип, Раса</string>
+    <string name="search_found">Регион, Цвет, Тип, Раса</string>
     <string name="title_missing">Отсутствующий</string>
+    <string name="title_found">Нашел</string>
     <string name="home_title_found">Найденные домашние животные</string>
     <string name="home_title_missing">Пропавшие домашние животные</string>
     <string name="register_button">ЗАРЕГИСТРИРОВАТЬСЯ</string>
@@ -63,14 +67,14 @@
     <string name="sample_seen">01.01.2000</string>
     <string name="lang_en">English</string>
     <string name="lang_ru">русский</string>
-    <string-array name="animal_species">
+    <string-array name="animal_species_array">
         <item>Выберите вид</item>
         <item>Собака</item>
         <item>Кот</item>
         <item>Кролик</item>
         <item>Птица</item>
     </string-array>
-    <string-array name="colours">
+    <string-array name="colours_array">
         <item>Выберите цвет</item>
         <item>коричневый</item>
         <item>Чернить</item>
@@ -81,7 +85,7 @@
         <item>Серый</item>
     </string-array>
 
-    <string-array name="regions_missing">
+    <string-array name="regions_array">
         <item>Выберите провинцию</item>
         <item>Burgenland</item>
         <item>Kärnten</item>
