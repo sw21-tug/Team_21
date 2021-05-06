@@ -48,11 +48,11 @@
     <string name="login_username_sample">Имя пользователя</string>
     <string name="login_password">Пароль:</string>
     <string name="login_password_sample">Пароль</string>
-    <string name="register_error_username">Имя пользователя обязательно</string>
+    <string name="error_username">Имя пользователя обязательно</string>
     <string name="register_error_username_in_use">Логин уже используется</string>
     <string name="register_error_mail">Почтовый адрес является обязательным</string>
     <string name="register_error_mail_valid">Недействительный почтовый адрес</string>
-    <string name="register_error_password">Пароль обязателен</string>
+    <string name="error_password">Пароль обязателен</string>
     <string name="register_error_password_match">Пароли не соответствуют</string>
     <string name="register_error_phone">Неверный номер телефона</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -93,5 +93,10 @@
         <item>Vorarlberg</item>
         <item>Wien</item>
     </string-array>
+
+    <string name="login_error_username">Пользователь не существует</string>
+    <string name="login_error_password">Неверный пароль</string>
+
+    <string name="action_user">Пользователь</string>
 
 </resources>

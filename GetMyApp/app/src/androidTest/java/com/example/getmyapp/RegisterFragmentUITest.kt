@@ -1,12 +1,6 @@
 package com.example.getmyapp
 
-import android.content.Context
-import androidx.core.content.res.TypedArrayUtils.getText
-import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.room.Room
-import androidx.test.core.app.ApplicationProvider
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.getmyapp.ui.login.RegisterFragment
 
@@ -19,12 +13,7 @@ import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import com.example.getmyapp.database.AppDatabase
 import com.example.getmyapp.database.User
-import com.example.getmyapp.database.UserDao
-import org.junit.After
-import org.junit.Before
-import java.io.IOException
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -67,7 +56,7 @@ class RegisterFragmentUITest {
 
     @Test
     fun incorrectInput() {
-        val scenario = launchFragmentInContainer<RegisterFragment> ()
+        launchFragmentInContainer<RegisterFragment> ()
 
         onView(withId(R.id.usernameInputEditText)).perform(typeText("UserName_123"), closeSoftKeyboard())
         onView(withId(R.id.firstNameEditText)).perform(typeText("FirstName"), closeSoftKeyboard())
