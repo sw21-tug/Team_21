@@ -37,8 +37,14 @@ class LoginFragmentUITest {
 
             Espresso.onView(ViewMatchers.withId(R.id.usernameInputEditText))
                 .perform(ViewActions.typeText("TestUserLogin"), ViewActions.closeSoftKeyboard())
+            Espresso.onView(ViewMatchers.withId(R.id.firstNameEditText))
+                .perform(ViewActions.typeText("first"), ViewActions.closeSoftKeyboard())
+            Espresso.onView(ViewMatchers.withId(R.id.mailAddressEditText))
+                .perform(ViewActions.typeText("last"), ViewActions.closeSoftKeyboard())
             Espresso.onView(ViewMatchers.withId(R.id.mailAddressEditText))
                 .perform(ViewActions.typeText("example@example.com"), ViewActions.closeSoftKeyboard())
+            Espresso.onView(ViewMatchers.withId(R.id.phoneNumberEditText))
+                .perform(ViewActions.typeText("+43123456"), ViewActions.closeSoftKeyboard())
             Espresso.onView(ViewMatchers.withId(R.id.passwordInputEditText))
                 .perform(ViewActions.typeText("secret"), ViewActions.closeSoftKeyboard())
             Espresso.onView(ViewMatchers.withId(R.id.passwordInputEditText2))
@@ -100,7 +106,7 @@ class LoginFragmentUITest {
         launchFragmentInContainer<LoginFragment> ()
 
         Espresso.onView(ViewMatchers.withId(R.id.usernameInputEditText))
-            .perform(ViewActions.typeText("TestLoginUser"), ViewActions.closeSoftKeyboard())
+            .perform(ViewActions.typeText("test"), ViewActions.closeSoftKeyboard())
         Espresso.onView(ViewMatchers.withId(R.id.passwordInputEditText))
             .perform(ViewActions.typeText("IncorrectPassword"), ViewActions.closeSoftKeyboard())
         Espresso.onView(ViewMatchers.withId(R.id.loginButton))

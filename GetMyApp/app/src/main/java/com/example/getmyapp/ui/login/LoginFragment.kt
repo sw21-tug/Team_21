@@ -9,15 +9,13 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.room.Room
 import com.example.getmyapp.R
-import com.example.getmyapp.database.AppDatabase
 import com.example.getmyapp.database.User
+import com.google.firebase.database.*
 import org.bouncycastle.crypto.generators.SCrypt
 import java.nio.ByteBuffer
 import java.nio.CharBuffer
 import java.nio.charset.StandardCharsets
-import java.security.SecureRandom
 import java.util.*
 
 
@@ -25,10 +23,14 @@ class LoginFragment : Fragment() {
 
     private lateinit var loginViewModel: LoginViewModel
 
+    private lateinit var databaseUsers: DatabaseReference
+
+    private lateinit var listOfUsers: ArrayList<User>
+
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         loginViewModel =
                 ViewModelProvider(this).get(LoginViewModel::class.java)
@@ -47,6 +49,10 @@ class LoginFragment : Fragment() {
         loginButton.setOnClickListener {
             getInputData()
         }
+
+        databaseUsers = FirebaseDatabase.getInstance().getReference("Users")
+
+        listOfUsers = ArrayList<User>()
 
 
         return root
@@ -82,41 +88,70 @@ class LoginFragment : Fragment() {
 
         var user: User? = null
 
-        val checker = Thread {
-            val db = Room.databaseBuilder(
-                    requireActivity().applicationContext,
-                    AppDatabase::class.java, "database-name"
-            ).build()
+        databaseUsers.addListenerForSingleValueEvent(object :
+            ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot != null) {
+                    val users: HashMap<String, HashMap<String, String>> = dataSnapshot.getValue() as HashMap<String, HashMap<String, String>>
+                    if (users != null) {
+                        listOfUsers.clear()              // make sure list is always cleared
 
-            val userDao = db.userDao()
-            user = userDao.getUser(username.toString())
+                        for ((key, value) in users) {
+                            val name = value["name"]
+                            if (name != null) {
+                                val user: User = User(
+                                    key, name, value["firstName"], value["lastName"], value["mailAddress"],
+                                    value["phoneNumber"], value["hash"], value["salt"]
+                                )
+                                listOfUsers.add(user)
+                            }
+                        }
 
-        }
+                        user = listOfUsers.find { user -> user.name == username.toString() }
+                    }
 
-        checker.start()
-        checker.join()
+                    if (user == null) {
+                        usernameEditText.error =
+                            activity?.resources?.getString(R.string.login_error_username)
+                        return
+                    }
 
-        if (user == null) {
-            usernameEditText.error = activity?.resources?.getString(R.string.login_error_username)
-            return
-        }
+                    val salt = user!!.salt
+                    val passwordHash = user!!.hash
 
-        val salt = user!!.salt
-        val passwordHash = user!!.hash
+                    val passwordByteArray = charsToBytes(password)
+                    val hashedPassword = SCrypt.generate(
+                        passwordByteArray,
+                        android.util.Base64.decode(salt, android.util.Base64.NO_WRAP),
+                        16384,
+                        8,
+                        1,
+                        32
+                    )
 
-        val passwordByteArray = charsToBytes(password)
-        val hashedPassword = SCrypt.generate(passwordByteArray, android.util.Base64.decode(salt, android.util.Base64.NO_WRAP), 16384, 8, 1, 32)
+                    if (passwordHash != android.util.Base64.encodeToString(
+                            hashedPassword,
+                            android.util.Base64.NO_WRAP
+                        )
+                    ) {
+                        passwordEditText.error =
+                            activity?.resources?.getString(R.string.login_error_password)
+                        return
+                    }
 
-        if (passwordHash != android.util.Base64.encodeToString(hashedPassword, android.util.Base64.NO_WRAP)) {
-            passwordEditText.error = activity?.resources?.getString(R.string.login_error_password)
-            return
-        }
+                    passwordEditText.setText("")
+                    Arrays.fill(password, '\u0000')
+                    Arrays.fill(passwordByteArray, 0.toByte())
 
-        passwordEditText.setText("")
-        Arrays.fill(password, '\u0000')
-        Arrays.fill(passwordByteArray, 0.toByte())
+                    findNavController().navigate(R.id.action_nav_login_to_nav_home)
+                }
+            }
 
-        findNavController().navigate(R.id.action_nav_login_to_nav_home)
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
+
     }
 
     fun charsToBytes(chars: CharArray): ByteArray {
@@ -124,4 +159,28 @@ class LoginFragment : Fragment() {
         return Arrays.copyOf(byteBuffer.array(), byteBuffer.limit())
     }
 
+    val userListener = object : ValueEventListener {
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            val users: HashMap<String, HashMap<String, String>>? = dataSnapshot.getValue() as HashMap<String, HashMap<String, String>>?
+
+            if (users != null) {
+                listOfUsers.clear()              // make sure list is always cleared
+
+                for ((key, value) in users) {
+                    val name = value["name"]
+                    if (name != null) {
+                        val user: User = User(
+                            key, name, value["firstName"], value["lastName"], value["mailAddress"],
+                            value["phoneNumber"], value["hash"], value["salt"]
+                        )
+                        listOfUsers.add(user)
+                    }
+                }
+            }
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+            // Getting Post failed
+        }
+    }
 }
