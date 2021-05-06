@@ -25,6 +25,7 @@ class MissingFragment : Fragment() {
 
     private lateinit var listOfPets: ArrayList<Pet>
 
+    private lateinit var  recyclerView: RecyclerView
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -56,21 +57,9 @@ class MissingFragment : Fragment() {
             regionSpinner.adapter = adapter
         }
 
-        val recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
+        recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
+
         recyclerView.layoutManager = LinearLayoutManager(root.context)
-
-        val samplePet = arrayOf("Waldi", "Dog", "Australian Shepherd", "Grey", "01.01.2021")
-        val samplePet2 = arrayOf("Katzi", "Katze", "Mischling", "Black", "01.01.2020")
-        recyclerView.adapter = MissingAdapter(arrayOf(samplePet, samplePet2))
-
-
-        val pet1 = Pet(null, "123", "name", "dog", "dalmatiner",
-            "white", "5", "diverse", "012", "graz",
-            "12.12.12")
-        val pet2 = Pet(null, "1234", "waldi", "dog", "bulldog",
-            "black", "5", "queer", "210", "meidling",
-            "12.12.12")
-
 
         databasePets = FirebaseDatabase.getInstance().getReference("Pets")
 
@@ -105,6 +94,8 @@ class MissingFragment : Fragment() {
         override fun onDataChange(dataSnapshot: DataSnapshot) {
             val pets: HashMap<String, HashMap<String, String>> = dataSnapshot.getValue() as HashMap<String, HashMap<String, String>>
 
+            listOfPets.clear()
+
             for ((key, value) in pets) {
                 val chipNo = value["chipNo"]
                 val name = value["name"]
@@ -116,13 +107,19 @@ class MissingFragment : Fragment() {
                 val ownerId = value["ownerId"]
                 val region = value["region"]
                 val lastSeen = value["lastSeen"]
-                if (chipNo != null && name != null && species != null && breed != null && color != null
-                    && age != null && gender != null && ownerId != null && region != null && lastSeen != null) {
-                    val pet: Pet = Pet(key, chipNo, name, species, breed, color, age, gender,
-                    ownerId, region, lastSeen)
-                    listOfPets.add(pet)
+                val found = value["found"]
+                if (found != null && found.compareTo("false") == 0) {
+                    if (chipNo != null && name != null && species != null && breed != null && color != null
+                        && age != null && gender != null && ownerId != null && region != null && lastSeen != null) {
+                        val pet: Pet = Pet(
+                            key, chipNo, name, species, breed, color, age, gender,
+                            ownerId, region, lastSeen, found.toBoolean()
+                        )
+                        listOfPets.add(pet)
+                    }
                 }
             }
+            recyclerView.adapter = MissingAdapter(listOfPets)
         }
 
         override fun onCancelled(databaseError: DatabaseError) {

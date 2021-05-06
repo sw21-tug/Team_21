@@ -11,7 +11,9 @@ data class Pet(var petId: String?,
 
                val ownerId: String,
                val region: String,
-               val lastSeen: String) {
+               val lastSeen: String,
+               val found: Boolean
+                ) {
     fun setId(Id:String) {
         petId = Id
     }

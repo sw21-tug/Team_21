@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
+import com.example.getmyapp.database.Pet
 
-class MissingAdapter(private val dataSet: Array<Array<String>>) :
+class MissingAdapter(private val dataSet: ArrayList<Pet>) :
     RecyclerView.Adapter<MissingAdapter.ViewHolder>() {
 
     /**
@@ -36,11 +37,11 @@ class MissingAdapter(private val dataSet: Array<Array<String>>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.nameTextView.text = dataSet[position][0]
-        viewHolder.speciesTextView.text = dataSet[position][1]
-        viewHolder.breedTextView.text = dataSet[position][2]
-        viewHolder.colorTextView.text = dataSet[position][3]
-        viewHolder.lastSeenTextView.text = dataSet[position][4]
+        viewHolder.nameTextView.text = dataSet[position].name
+        viewHolder.speciesTextView.text = dataSet[position].species
+        viewHolder.breedTextView.text = dataSet[position].breed
+        viewHolder.colorTextView.text = dataSet[position].color
+        viewHolder.lastSeenTextView.text = dataSet[position].lastSeen
     }
 
     // Return the size of your dataset (invoked by the layout manager)
