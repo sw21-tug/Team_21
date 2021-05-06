@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.example.getmyapp.R
 import com.example.getmyapp.database.AppDatabase
@@ -20,8 +21,6 @@ import java.nio.CharBuffer
 import java.nio.charset.StandardCharsets
 import java.security.SecureRandom
 import java.util.*
-
-import com.example.getmyapp.database.UserDao
 
 
 class RegisterFragment : Fragment() {
@@ -80,7 +79,7 @@ class RegisterFragment : Fragment() {
 
 
         if (username.isEmpty()) {
-            usernameEditText.error = activity?.resources?.getString(R.string.register_error_username)
+            usernameEditText.error = activity?.resources?.getString(R.string.error_username)
             correctInputFlag = false
         }
 
@@ -90,12 +89,12 @@ class RegisterFragment : Fragment() {
         }
 
         if (password.isEmpty()) {
-            passwordEditText.error = activity?.resources?.getString(R.string.register_error_password)
+            passwordEditText.error = activity?.resources?.getString(R.string.error_password)
             correctInputFlag = false
         }
 
         if (passwordConfirmation.isEmpty()) {
-            passwordConfirmationEditText.error = activity?.resources?.getString(R.string.register_error_password)
+            passwordConfirmationEditText.error = activity?.resources?.getString(R.string.error_password)
             correctInputFlag = false
         }
 
@@ -119,19 +118,19 @@ class RegisterFragment : Fragment() {
             return
         }
 
-        val checker = Thread(Runnable {
+        val checker = Thread {
             val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
+                    requireActivity().applicationContext,
+                    AppDatabase::class.java, "database-name"
             ).build()
 
             val userDao = db.userDao()
             val users: List<User> = userDao.getAll()
 
-            if (users.find { user -> user.name.equals(username.toString()) } != null) {
+            if (users.find { user -> user.name == username.toString() } != null) {
                 correctInputFlag = false
             }
-        })
+        }
 
         checker.start()
         checker.join()
@@ -156,19 +155,21 @@ class RegisterFragment : Fragment() {
         Arrays.fill(password, '\u0000')
         Arrays.fill(passwordByteArray, 0.toByte())
 
-        Thread(Runnable {
+        Thread {
             val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
+                    requireActivity().applicationContext,
+                    AppDatabase::class.java, "database-name"
             ).build()
 
             val userDao = db.userDao()
 
             userDao.insertAll(User(username.toString(), firstName.toString(), lastName.toString(),
-                mailAddress.toString(), phoneNumber.toString(),
-                Base64.getEncoder().encodeToString(hashedPassword),
-                Base64.getEncoder().encodeToString(salt)))
-        }).start()
+                    mailAddress.toString(), phoneNumber.toString(),
+                    android.util.Base64.encodeToString(hashedPassword, android.util.Base64.NO_WRAP),
+                    android.util.Base64.encodeToString(salt, android.util.Base64.NO_WRAP)))
+        }.start()
+
+        findNavController().navigate(R.id.action_nav_register_to_nav_login)
     }
 
     fun charsToBytes(chars: CharArray): ByteArray {
@@ -177,25 +178,25 @@ class RegisterFragment : Fragment() {
     }
 
     fun deleteTestUser(user: String) {
-        Thread(Runnable {
+        Thread {
             val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
+                    requireActivity().applicationContext,
+                    AppDatabase::class.java, "database-name"
             ).build()
 
             val userDao = db.userDao()
 
             userDao.deleteByPK(user)
-        }).start()
+        }.start()
     }
 
     fun getTestUser(user: String): User? {
         var testUser: User? = null
 
-        val t1 = Thread(Runnable {
+        val t1 = Thread {
             val db = Room.databaseBuilder(
-                requireActivity().applicationContext,
-                AppDatabase::class.java, "database-name"
+                    requireActivity().applicationContext,
+                    AppDatabase::class.java, "database-name"
             ).build()
 
             val userDao = db.userDao()
@@ -203,7 +204,7 @@ class RegisterFragment : Fragment() {
             testUser = userDao.getUser(user)
 
 
-        })
+        }
 
         t1.start()
         t1.join()
