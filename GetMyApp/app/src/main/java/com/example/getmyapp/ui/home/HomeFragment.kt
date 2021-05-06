@@ -26,16 +26,14 @@ class HomeFragment : Fragment() {
         homeViewModel =
                 ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        /*FOR FUTURE FUNCTIONALITY IMPLEMENTATION
-        val imageButtonFoundPets: Button = root.findViewById(R.id.imageButtonFoundPets)
-        imageButtonFoundPets.setOnClickListener(View.OnClickListener {
-            findNavController().navigate(R.id.)
-        })
-        val imageButtonLostPets: ImageButton =  root.findViewById(R.id.imageButtonLostPets)
-        imageButtonLostPets.setOnClickListener {View.OnClickListener {
-            findNavController().navigate(R.id.)
-        })
-        }*/
+        val imageButtonFoundPets: ImageButton = root.findViewById(R.id.imageButtonFoundPets)
+        imageButtonFoundPets.setOnClickListener{
+            findNavController().navigate(R.id.action_nav_home_to_nav_found)
+        }
+        val imageButtonLostPets: ImageButton =  root.findViewById(R.id.imageButtonMissingPets)
+        imageButtonLostPets.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_home_to_nav_missing)
+        }
 
 
         return root

@@ -10,11 +10,22 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
+import com.example.getmyapp.database.Pet
+import com.example.getmyapp.database.User
+import com.google.firebase.database.*
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 
 class MissingFragment : Fragment() {
 
 
+    private lateinit var databasePets: DatabaseReference
+
+    private lateinit var listOfPets: ArrayList<Pet>
+
+    private lateinit var  recyclerView: RecyclerView
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -46,13 +57,73 @@ class MissingFragment : Fragment() {
             regionSpinner.adapter = adapter
         }
 
-        val recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
+        recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
+
         recyclerView.layoutManager = LinearLayoutManager(root.context)
 
-        val samplePet = arrayOf("Waldi", "Dog", "Australian Shepherd", "Grey", "01.01.2021")
-        val samplePet2 = arrayOf("Katzi", "Katze", "Mischling", "Black", "01.01.2020")
-        recyclerView.adapter = MissingAdapter(arrayOf(samplePet, samplePet2))
+        databasePets = FirebaseDatabase.getInstance().getReference("Pets")
 
+        databasePets.addValueEventListener(petListener)
+
+        listOfPets = ArrayList<Pet>()
+
+        /*
+        var petId = databasePets.push().key
+
+        if (petId != null) {
+            pet1.setId(petId)
+            databasePets.child(petId).setValue(pet1)
+        }
+
+        petId = databasePets.push().key
+
+        if (petId != null) {
+            pet2.setId(petId)
+            databasePets.child(petId).setValue(pet2)
+        }
+        */
+
+        /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
+            textView.text = it
+        })*/
         return root
+    }
+
+    // keeps track of all changes to pets DB
+    val petListener = object : ValueEventListener {
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            val pets: HashMap<String, HashMap<String, String>> = dataSnapshot.getValue() as HashMap<String, HashMap<String, String>>
+
+            listOfPets.clear()
+
+            for ((key, value) in pets) {
+                val chipNo = value["chipNo"]
+                val name = value["name"]
+                val species = value["species"]
+                val breed = value["breed"]
+                val color = value["color"]
+                val age = value["age"]
+                val gender = value["gender"]
+                val ownerId = value["ownerId"]
+                val region = value["region"]
+                val lastSeen = value["lastSeen"]
+                val found = value["found"]
+                if (found != null && found.compareTo("false") == 0) {
+                    if (chipNo != null && name != null && species != null && breed != null && color != null
+                        && age != null && gender != null && ownerId != null && region != null && lastSeen != null) {
+                        val pet: Pet = Pet(
+                            key, chipNo, name, species, breed, color, age, gender,
+                            ownerId, region, lastSeen, found.toBoolean()
+                        )
+                        listOfPets.add(pet)
+                    }
+                }
+            }
+            recyclerView.adapter = MissingAdapter(listOfPets)
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+            // Getting Post failed
+        }
     }
 }

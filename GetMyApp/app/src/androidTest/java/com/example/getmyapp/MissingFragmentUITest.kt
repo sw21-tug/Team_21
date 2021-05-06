@@ -25,10 +25,5 @@ class MissingFragmentUITest {
         onView(withId(R.id.colorSpinner)).check(matches(withSpinnerText("Select Colour")))
         onView(withId(R.id.regionSpinner)).check(matches(withSpinnerText("Select Province")))
 
-        onView(RecyclerViewMatcher(R.id.missingPetsRecyclerView).atPosition(0))
-                .check(matches(hasDescendant(withText("Waldi"))))
-
-        onView(RecyclerViewMatcher(R.id.missingPetsRecyclerView).atPosition(1))
-                .check(matches(hasDescendant(withText("Katzi"))))
     }
 }

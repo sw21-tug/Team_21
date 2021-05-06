@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "369590656122",
+    "firebase_url": "https://findmypet-41c16-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "findmypet-41c16",
+    "storage_bucket": "findmypet-41c16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369590656122:android:4f3dcbb9c294ae3bf12fc3",
+        "android_client_info": {
+          "package_name": "com.example.getmyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369590656122-9r73e1qc0io9i8s0v9i0tju61es87mei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG7gGU_g0KHJEcYSAYEnRQSpG8z9H48mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369590656122-9r73e1qc0io9i8s0v9i0tju61es87mei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369590656122:android:57a6648003bc8318f12fc3",
+        "android_client_info": {
+          "package_name": "com.example.getmypet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369590656122-9r73e1qc0io9i8s0v9i0tju61es87mei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG7gGU_g0KHJEcYSAYEnRQSpG8z9H48mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369590656122-9r73e1qc0io9i8s0v9i0tju61es87mei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
