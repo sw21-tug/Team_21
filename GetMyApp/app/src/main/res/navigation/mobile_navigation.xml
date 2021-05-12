@@ -42,7 +42,11 @@
         android:id="@+id/nav_found"
         android:name="com.example.getmyapp.ui.found.FoundFragment"
         android:label="@string/menu_found"
-        tools:layout="@layout/fragment_found" />
+        tools:layout="@layout/fragment_found" >
+        <action
+            android:id="@+id/action_nav_found_to_addPetFragment"
+            app:destination="@id/addPetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_register"
         android:name="com.example.getmyapp.ui.login.RegisterFragment"
@@ -64,5 +68,8 @@
         <action
             android:id="@+id/action_addPetFragment_to_nav_missing"
             app:destination="@id/nav_missing" />
+        <action
+            android:id="@+id/action_addPetFragment_to_nav_found"
+            app:destination="@id/nav_found" />
     </fragment>
 </navigation>

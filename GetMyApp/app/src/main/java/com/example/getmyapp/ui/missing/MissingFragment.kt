@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Spinner
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -76,7 +77,11 @@ class MissingFragment : Fragment() {
 
         addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
-        addMissingPetButton.setOnClickListener{ findNavController().navigate(R.id.action_nav_missing_to_addPetFragment) }
+        addMissingPetButton.setOnClickListener {
+            val found = "false"
+            val bundle = bundleOf("found" to found)
+            findNavController().navigate(R.id.action_nav_missing_to_addPetFragment, bundle)
+        }
 
         /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it

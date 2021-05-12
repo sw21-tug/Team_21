@@ -31,6 +31,8 @@ class addPetFragment: Fragment() {
 
     private lateinit var databasePets: DatabaseReference
 
+    private var found: Boolean = false
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,6 +53,8 @@ class addPetFragment: Fragment() {
         saveButton = root.findViewById<Button>(R.id.saveButton)
         saveButton.setOnClickListener{ addPet() }
 
+        found = arguments?.get("found").toString().toBoolean()
+
         return root
     }
 
@@ -60,13 +64,14 @@ class addPetFragment: Fragment() {
         val petId = databasePets.push().key
 
         // TODO: UserID
-        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, "123", region, lastSeen, false)
+        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, "123", region, lastSeen, found)
 
         if (petId != null) {
             databasePets.child(petId).setValue(pet)
         }
 
-        findNavController().navigate(R.id.action_addPetFragment_to_nav_missing)
+        if (found) findNavController().navigate(R.id.action_addPetFragment_to_nav_found)
+        else findNavController().navigate(R.id.action_addPetFragment_to_nav_missing)
     }
 
     fun getInputData(): Boolean {

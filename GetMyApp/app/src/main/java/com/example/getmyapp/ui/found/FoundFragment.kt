@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 
 
@@ -23,6 +26,8 @@ class FoundFragment : Fragment() {
     private lateinit var listOfPets: ArrayList<Pet>
 
     private lateinit var  recyclerView: RecyclerView
+
+    private lateinit var addFoundPetButton: FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,6 +71,15 @@ class FoundFragment : Fragment() {
         databasePets.addValueEventListener(petListener)
 
         listOfPets = ArrayList<Pet>()
+
+        addFoundPetButton = root.findViewById<FloatingActionButton>(R.id.addFoundPetButton)
+
+        addFoundPetButton.setOnClickListener {
+            val found = "true"
+            val bundle = bundleOf("found" to found)
+            findNavController().navigate(R.id.action_nav_found_to_addPetFragment, bundle)
+        }
+
         return root
 
 
@@ -88,7 +102,7 @@ class FoundFragment : Fragment() {
                 val ownerId = value["ownerId"]
                 val region = value["region"]
                 val lastSeen = value["lastSeen"]
-                val found = value["found"]
+                val found = value["found"].toString()
                 if ( found != null && found.compareTo("true") == 0) {
 
                     if (chipNo != null && name != null && species != null && breed != null && color != null
