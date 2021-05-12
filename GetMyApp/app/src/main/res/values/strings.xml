@@ -56,9 +56,11 @@
     <string name="missing_preview">Preview 1</string>
     <string name="found_preview">Preview 1</string>
 
+    <string name="select_species">Select Species</string>
+
     <string name="animal_species">Animal Species</string>
     <string-array name="animal_species_array">
-        <item>Select Species</item>
+        <item>@string/select_species</item>
         <item>Dog</item>
         <item>Cat</item>
         <item>Rabbit</item>
@@ -111,4 +113,11 @@
     <string name="login_error_password">Incorrect Password</string>
 
     <string name="action_user">User</string>
+
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="chipNo">Chip Number</string>
+
+    <string name="generic_error">Please provide an input</string>
 </resources>

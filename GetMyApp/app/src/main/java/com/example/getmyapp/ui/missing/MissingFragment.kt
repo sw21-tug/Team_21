@@ -78,22 +78,6 @@ class MissingFragment : Fragment() {
 
         addMissingPetButton.setOnClickListener{ findNavController().navigate(R.id.action_nav_missing_to_addPetFragment) }
 
-        /*
-        var petId = databasePets.push().key
-
-        if (petId != null) {
-            pet1.setId(petId)
-            databasePets.child(petId).setValue(pet1)
-        }
-
-        petId = databasePets.push().key
-
-        if (petId != null) {
-            pet2.setId(petId)
-            databasePets.child(petId).setValue(pet2)
-        }
-        */
-
         /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })*/

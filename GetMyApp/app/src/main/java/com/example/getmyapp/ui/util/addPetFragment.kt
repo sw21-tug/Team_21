@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.getmyapp.R
@@ -40,6 +38,14 @@ class addPetFragment: Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_add_pet, container, false)
 
+        val species = resources.getStringArray(R.array.animal_species_array)
+        val speciesSpinner = root.findViewById<Spinner>(R.id.spinnerPetSpecies)
+        if (speciesSpinner != null) {
+            val adapter = ArrayAdapter(requireActivity(),
+                    android.R.layout.simple_spinner_item, species)
+            speciesSpinner.adapter = adapter
+        }
+
         databasePets = FirebaseDatabase.getInstance().getReference("Pets")
 
         saveButton = root.findViewById<Button>(R.id.saveButton)
@@ -49,11 +55,12 @@ class addPetFragment: Fragment() {
     }
 
     private fun addPet() {
-        getInputData()
+        if (!getInputData()) return
 
         val petId = databasePets.push().key
 
-        val pet = Pet(petId, chipNumber, name, "species", breed, color, age, gender, "123", region, lastSeen, false)
+        // TODO: UserID
+        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, "123", region, lastSeen, false)
 
         if (petId != null) {
             databasePets.child(petId).setValue(pet)
@@ -62,11 +69,11 @@ class addPetFragment: Fragment() {
         findNavController().navigate(R.id.action_addPetFragment_to_nav_missing)
     }
 
-    fun getInputData() {
+    fun getInputData(): Boolean {
         val root = requireView()
 
         val nameEditText = root.findViewById<EditText>(R.id.editTextTextPetName)
-        val speciesSpinner = root.findViewById<Spinner>(R.id.speciesSpinner)
+        val speciesSpinner = root.findViewById<Spinner>(R.id.spinnerPetSpecies)
         val breedEditText = root.findViewById<EditText>(R.id.editTextPetBreed)
         val colorEditText = root.findViewById<EditText>(R.id.editTextTextPetColor)
         val ageEditText = root.findViewById<EditText>(R.id.editTextTextPetAge)
@@ -75,8 +82,10 @@ class addPetFragment: Fragment() {
         val lastSeenEditText = root.findViewById<EditText>(R.id.editTextTextPetLastSeen)
         val chipNumberEditText = root.findViewById<EditText>(R.id.editTextTextPetChipNumber)
 
+        var errorOccured = false
+
         name = nameEditText.text.toString()
-        //species = speciesSpinner.selectedItem.toString()
+        species = speciesSpinner.selectedItem.toString()
         breed = breedEditText.text.toString()
         color = colorEditText.text.toString()
         age = ageEditText.text.toString()
@@ -84,5 +93,47 @@ class addPetFragment: Fragment() {
         gender = genderEditText.text.toString()
         lastSeen = lastSeenEditText.text.toString()
         chipNumber = chipNumberEditText.text.toString()
+
+        if (name.isEmpty()) {
+            nameEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (species.equals(activity?.resources?.getString(R.string.select_species))) {
+            val spinnerView: TextView = speciesSpinner.selectedView as TextView
+            spinnerView.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (breed.isEmpty()) {
+            breedEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (color.isEmpty()) {
+            colorEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (age.isEmpty()) {
+            ageEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (region.isEmpty()) {
+            regionEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (gender.isEmpty()) {
+            genderEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (lastSeen.isEmpty()) {
+            lastSeenEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+        if (chipNumber.isEmpty()) {
+            chipNumberEditText.error = activity?.resources?.getString(R.string.generic_error)
+            errorOccured = true
+        }
+
+        if (errorOccured) return false
+
+        return true
     }
 }

@@ -67,8 +67,11 @@
     <string name="sample_seen">01.01.2000</string>
     <string name="lang_en">English</string>
     <string name="lang_ru">русский</string>
+
+    <string name="select_species">Выберите вид</string>
+
     <string-array name="animal_species_array">
-        <item>Выберите вид</item>
+        <item>@string/select_species</item>
         <item>Собака</item>
         <item>Кот</item>
         <item>Кролик</item>
@@ -103,4 +106,10 @@
 
     <string name="action_user">Пользователь</string>
 
+    <string name="name">Имя</string>
+    <string name="age">Возраст</string>
+    <string name="gender">Пол</string>
+    <string name="chipNo">Номер чипа</string>
+
+    <string name="generic_error">Пожалуйста, внесите свой вклад</string>
 </resources>
