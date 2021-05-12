@@ -103,4 +103,7 @@
 
     <string name="action_user">Пользователь</string>
 
+
+    <string name="Donation">пожертвование</string>
+    <string name="text_donate">Спасибо за поддержку!</string>
 </resources>

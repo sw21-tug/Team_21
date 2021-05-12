@@ -111,4 +111,6 @@
     <string name="login_error_password">Incorrect Password</string>
 
     <string name="action_user">User</string>
+    <string name="Donation">Donation</string>
+    <string name="text_donate">Thank you for your support!</string>
 </resources>
