@@ -1,7 +1,5 @@
 package com.example.getmyapp.ui.found
 
-import com.example.getmyapp.ui.missing.MissingAdapter
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -75,9 +73,8 @@ class FoundFragment : Fragment() {
         addFoundPetButton = root.findViewById<FloatingActionButton>(R.id.addFoundPetButton)
 
         addFoundPetButton.setOnClickListener {
-            val found = "true"
-            val bundle = bundleOf("found" to found)
-            findNavController().navigate(R.id.action_nav_found_to_addPetFragment, bundle)
+            val bundle = bundleOf("found" to true)
+            findNavController().navigate(R.id.action_nav_found_to_nav_add_report, bundle)
         }
 
         return root
@@ -108,7 +105,7 @@ class FoundFragment : Fragment() {
                     if (chipNo != null && name != null && species != null && breed != null && color != null
                         && age != null && gender != null && ownerId != null && region != null && lastSeen != null
                     ) {
-                        val pet: Pet = Pet(
+                        val pet = Pet(
                             key, chipNo, name, species, breed, color, age, gender,
                             ownerId, region, lastSeen, found.toBoolean()
                         )

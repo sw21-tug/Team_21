@@ -13,6 +13,7 @@
     <string name="menu_about_us">О нас</string>
     <string name="menu_donate">Пожертвовать</string>
     <string name="menu_changelang">Изменить язык</string>
+    <string name="menu_add_report">Добавить отчет</string>
     <string name="login_header">Авторизоваться</string>
     <string name="sample_breed">Австралийская овчарка</string>
     <string name="Breed">Порода</string>
@@ -20,6 +21,10 @@
     <string name="pet_spezies_sample">Собака</string>
     <string name="sample_species">Spezies : Dog</string>
     <string name="example_name">Waldi</string>
+    <string name="example_region">Штирия</string>
+    <string name="example_age">18</string>
+    <string name="example_gender">Мужчина</string>
+    <string name="example_chip_number">123456789</string>
     <string name="Pet_Missing">Имя питомца</string>
     <string name="breed">Порода</string>
     <string name="region">Область, край</string>
@@ -29,6 +34,8 @@
     <string name="search_found_title">Поиск по имени питомца</string>
     <string name="missing_preview">Предварительный просмотр 1</string>
     <string name="found_preview">Предварительный просмотр 1</string>
+    <string name="fab_found_content_description">Создание отчета о найденном животном</string>
+    <string name="fab_missing_content_description">Создание отчета о пропаже домашнего животного</string>
     <string name="search_missing">Регион, Цвет, Тип, Раса</string>
     <string name="search_found">Регион, Цвет, Тип, Раса</string>
     <string name="title_missing">Отсутствующий</string>
@@ -110,6 +117,7 @@
     <string name="age">Возраст</string>
     <string name="gender">Пол</string>
     <string name="chipNo">Номер чипа</string>
+    <string name="save_button">СПАСИБО</string>
 
     <string name="generic_error">Пожалуйста, внесите свой вклад</string>
 </resources>

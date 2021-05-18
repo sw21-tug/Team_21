@@ -139,6 +139,7 @@
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/fab_missing_content_description"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

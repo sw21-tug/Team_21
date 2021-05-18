@@ -1,4 +1,4 @@
-package com.example.getmyapp.ui.util
+package com.example.getmyapp.ui.report
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
-class addPetFragment: Fragment() {
+class AddReportFragment: Fragment() {
 
     private lateinit var saveButton: Button
 
@@ -41,7 +38,7 @@ class addPetFragment: Fragment() {
         val root = inflater.inflate(R.layout.fragment_add_pet, container, false)
 
         val species = resources.getStringArray(R.array.animal_species_array)
-        val speciesSpinner = root.findViewById<Spinner>(R.id.spinnerPetSpecies)
+        val speciesSpinner = root.findViewById<Spinner>(R.id.createReportSpeciesSpinner)
         if (speciesSpinner != null) {
             val adapter = ArrayAdapter(requireActivity(),
                     android.R.layout.simple_spinner_item, species)
@@ -53,7 +50,7 @@ class addPetFragment: Fragment() {
         saveButton = root.findViewById<Button>(R.id.saveButton)
         saveButton.setOnClickListener{ addPet() }
 
-        found = arguments?.get("found").toString().toBoolean()
+        found = arguments?.getBoolean("found") == true
 
         return root
     }
@@ -70,24 +67,24 @@ class addPetFragment: Fragment() {
             databasePets.child(petId).setValue(pet)
         }
 
-        if (found) findNavController().navigate(R.id.action_addPetFragment_to_nav_found)
-        else findNavController().navigate(R.id.action_addPetFragment_to_nav_missing)
+        if (found) findNavController().navigate(R.id.action_nav_add_report_to_nav_found)
+        else findNavController().navigate(R.id.action_nav_add_report_to_nav_missing)
     }
 
-    fun getInputData(): Boolean {
+    private fun getInputData(): Boolean {
         val root = requireView()
 
-        val nameEditText = root.findViewById<EditText>(R.id.editTextTextPetName)
-        val speciesSpinner = root.findViewById<Spinner>(R.id.spinnerPetSpecies)
-        val breedEditText = root.findViewById<EditText>(R.id.editTextPetBreed)
-        val colorEditText = root.findViewById<EditText>(R.id.editTextTextPetColor)
-        val ageEditText = root.findViewById<EditText>(R.id.editTextTextPetAge)
-        val regionEditText = root.findViewById<EditText>(R.id.editTextTextPetRegion)
-        val genderEditText = root.findViewById<EditText>(R.id.editTextTextPetGender)
-        val lastSeenEditText = root.findViewById<EditText>(R.id.editTextTextPetLastSeen)
-        val chipNumberEditText = root.findViewById<EditText>(R.id.editTextTextPetChipNumber)
+        val nameEditText = root.findViewById<EditText>(R.id.createReportNameEditText)
+        val speciesSpinner = root.findViewById<Spinner>(R.id.createReportSpeciesSpinner)
+        val breedEditText = root.findViewById<EditText>(R.id.createReportBreedEditText)
+        val colorEditText = root.findViewById<EditText>(R.id.createReportColourEditText)
+        val ageEditText = root.findViewById<EditText>(R.id.createReportAgeEditText)
+        val regionEditText = root.findViewById<EditText>(R.id.createReportRegionEditText)
+        val genderEditText = root.findViewById<EditText>(R.id.createReportGenderEditText)
+        val lastSeenEditText = root.findViewById<EditText>(R.id.createReportLastSeenEditText)
+        val chipNumberEditText = root.findViewById<EditText>(R.id.createReportChipNumberEditText)
 
-        var errorOccured = false
+        var errorOccurred = false
 
         name = nameEditText.text.toString()
         species = speciesSpinner.selectedItem.toString()
@@ -101,43 +98,43 @@ class addPetFragment: Fragment() {
 
         if (name.isEmpty()) {
             nameEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
-        if (species.equals(activity?.resources?.getString(R.string.select_species))) {
+        if (species == activity?.resources?.getString(R.string.select_species)) {
             val spinnerView: TextView = speciesSpinner.selectedView as TextView
             spinnerView.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
         if (breed.isEmpty()) {
             breedEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
         if (color.isEmpty()) {
             colorEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
         if (age.isEmpty()) {
             ageEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
         if (region.isEmpty()) {
             regionEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
         if (gender.isEmpty()) {
             genderEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
         if (lastSeen.isEmpty()) {
             lastSeenEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
         if (chipNumber.isEmpty()) {
             chipNumberEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccured = true
+            errorOccurred = true
         }
 
-        if (errorOccured) return false
+        if (errorOccurred) return false
 
         return true
     }

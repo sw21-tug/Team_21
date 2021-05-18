@@ -139,6 +139,8 @@
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/fab_found_content_description"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

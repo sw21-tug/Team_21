@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ImageButton
 import android.widget.Spinner
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -15,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
-import com.example.getmyapp.database.User
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import java.util.*
@@ -78,9 +75,8 @@ class MissingFragment : Fragment() {
         addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
         addMissingPetButton.setOnClickListener {
-            val found = "false"
-            val bundle = bundleOf("found" to found)
-            findNavController().navigate(R.id.action_nav_missing_to_addPetFragment, bundle)
+            val bundle = bundleOf("found" to false)
+            findNavController().navigate(R.id.action_nav_missing_to_nav_add_report, bundle)
         }
 
         /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
@@ -111,7 +107,7 @@ class MissingFragment : Fragment() {
                 if (found != null && found.compareTo("false") == 0) {
                     if (chipNo != null && name != null && species != null && breed != null && color != null
                         && age != null && gender != null && ownerId != null && region != null && lastSeen != null) {
-                        val pet: Pet = Pet(
+                        val pet = Pet(
                             key, chipNo, name, species, breed, color, age, gender,
                             ownerId, region, lastSeen, found.toBoolean()
                         )

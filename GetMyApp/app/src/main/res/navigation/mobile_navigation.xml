@@ -35,8 +35,8 @@
         android:label="@string/menu_missing"
         tools:layout="@layout/fragment_missing" >
         <action
-            android:id="@+id/action_nav_missing_to_addPetFragment"
-            app:destination="@id/addPetFragment" />
+            android:id="@+id/action_nav_missing_to_nav_add_report"
+            app:destination="@id/nav_add_report" />
     </fragment>
     <fragment
         android:id="@+id/nav_found"
@@ -44,8 +44,8 @@
         android:label="@string/menu_found"
         tools:layout="@layout/fragment_found" >
         <action
-            android:id="@+id/action_nav_found_to_addPetFragment"
-            app:destination="@id/addPetFragment" />
+            android:id="@+id/action_nav_found_to_nav_add_report"
+            app:destination="@id/nav_add_report" />
     </fragment>
     <fragment
         android:id="@+id/nav_register"
@@ -62,14 +62,14 @@
         android:label="@string/menu_changelang"
         tools:layout="@layout/fragment_changelang" />
     <fragment
-        android:id="@+id/addPetFragment"
-        android:name="com.example.getmyapp.ui.util.addPetFragment"
-        android:label="addPetFragment" >
+        android:id="@+id/nav_add_report"
+        android:name="com.example.getmyapp.ui.report.AddReportFragment"
+        android:label="@string/menu_add_report" >
         <action
-            android:id="@+id/action_addPetFragment_to_nav_missing"
+            android:id="@+id/action_nav_add_report_to_nav_missing"
             app:destination="@id/nav_missing" />
         <action
-            android:id="@+id/action_addPetFragment_to_nav_found"
+            android:id="@+id/action_nav_add_report_to_nav_found"
             app:destination="@id/nav_found" />
     </fragment>
 </navigation>

@@ -23,7 +23,7 @@ class LoginFragmentUITest {
             val navController = TestNavHostController(
                 ApplicationProvider.getApplicationContext())
 
-            launchFragmentInContainer<RegisterFragment> {
+            launchFragmentInContainer {
                 RegisterFragment().also { fragment ->
                     fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                         if (viewLifecycleOwner != null) {
@@ -66,7 +66,7 @@ class LoginFragmentUITest {
         val navController = TestNavHostController(
             ApplicationProvider.getApplicationContext())
 
-        launchFragmentInContainer<LoginFragment> {
+        launchFragmentInContainer {
             LoginFragment().also { fragment ->
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {

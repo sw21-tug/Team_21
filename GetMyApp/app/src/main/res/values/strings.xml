@@ -15,6 +15,7 @@
     <string name="menu_about_us">About Us</string>
     <string name="menu_donate">Donate</string>
     <string name="menu_changelang">Change Language</string>
+    <string name="menu_add_report">Add Report</string>
 
     <string name="login_header">Login</string>
     <string name="login_username">Username:</string>
@@ -55,6 +56,8 @@
     <string name="search_found_title"> Search for pet name</string>
     <string name="missing_preview">Preview 1</string>
     <string name="found_preview">Preview 1</string>
+    <string name="fab_found_content_description">Create found pet report</string>
+    <string name="fab_missing_content_description">Create missing pet report</string>
 
     <string name="select_species">Select Species</string>
 
@@ -96,13 +99,17 @@
     <string name="breed">Breed</string>
     <string name="Pet_Missing">Name of the Pet</string>
     <string name="example_name">Waldi</string>
+    <string name="example_region">Styria</string>
+    <string name="example_age">18</string>
+    <string name="example_gender">Male</string>
+    <string name="example_chip_number">123456789</string>
     <string name="pet_spezies_sample">Dog</string>
     <string name="sample_species">Species : Dog</string>
     <string name="species">Species</string>
     <string name="Breed">Breed</string>
     <string name="sample_breed">Australian Shepherd</string>
     <string name="Colour">Colour</string>
-    <string name="sample_colour">grey</string>
+    <string name="sample_colour">Grey</string>
     <string name="last_seen">Last Seen</string>
     <string name="sample_seen">01.01.2000</string>
 
@@ -118,6 +125,7 @@
     <string name="age">Age</string>
     <string name="gender">Gender</string>
     <string name="chipNo">Chip Number</string>
+    <string name="save_button">SAVE</string>
 
     <string name="generic_error">Please provide an input</string>
 </resources>
