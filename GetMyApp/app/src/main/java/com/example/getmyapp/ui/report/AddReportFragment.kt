@@ -67,6 +67,7 @@ class AddReportFragment: Fragment() {
             databasePets.child(petId).setValue(pet)
         }
 
+
         if (found) findNavController().navigate(R.id.action_nav_add_report_to_nav_found)
         else findNavController().navigate(R.id.action_nav_add_report_to_nav_missing)
     }
