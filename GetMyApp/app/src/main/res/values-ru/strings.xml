@@ -120,4 +120,7 @@
     <string name="save_button">СПАСИБО</string>
 
     <string name="generic_error">Пожалуйста, внесите свой вклад</string>
+
+    <string name="Donation">пожертвование</string>
+    <string name="text_donate">Спасибо за поддержку!</string>
 </resources>

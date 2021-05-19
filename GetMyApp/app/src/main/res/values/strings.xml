@@ -128,4 +128,6 @@
     <string name="save_button">SAVE</string>
 
     <string name="generic_error">Please provide an input</string>
+    <string name="Donation">Donation</string>
+    <string name="text_donate">Thank you for your support!</string>
 </resources>

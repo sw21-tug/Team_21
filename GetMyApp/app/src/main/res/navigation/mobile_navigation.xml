@@ -62,6 +62,11 @@
         android:label="@string/menu_changelang"
         tools:layout="@layout/fragment_changelang" />
     <fragment
+        android:id="@+id/nav_donate"
+        android:name="com.example.getmyapp.ui.iap.InAppPurchaseFragment"
+        android:label="@string/menu_donate"
+        tools:layout="@layout/fragment_iap" />
+    <fragment
         android:id="@+id/nav_add_report"
         android:name="com.example.getmyapp.ui.report.AddReportFragment"
         android:label="@string/menu_add_report" >
