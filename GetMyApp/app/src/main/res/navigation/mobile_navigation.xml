@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_nav_home_to_nav_found"
             app:destination="@id/nav_found" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_user_overview"
+            app:destination="@id/nav_user_overview" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login" />
     </fragment>
     <fragment
         android:id="@+id/nav_login"
@@ -64,7 +70,7 @@
     <fragment
         android:id="@+id/nav_donate"
         android:name="com.example.getmyapp.ui.iap.InAppPurchaseFragment"
-        android:label="@string/menu_donate"
+        android:label="@string/menu_user_overview"
         tools:layout="@layout/fragment_iap" />
     <fragment
         android:id="@+id/nav_add_report"
@@ -76,5 +82,16 @@
         <action
             android:id="@+id/action_nav_add_report_to_nav_found"
             app:destination="@id/nav_found" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_user_overview"
+        android:name="com.example.getmyapp.ui.user.UserOverviewFragment"
+        android:label="@string/menu_user_overview" >
+        <action
+            android:id="@+id/action_nav_user_overview_to_nav_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/action_nav_user_overview_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 </navigation>

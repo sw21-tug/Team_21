@@ -14,6 +14,7 @@
     <string name="menu_donate">Пожертвовать</string>
     <string name="menu_changelang">Изменить язык</string>
     <string name="menu_add_report">Добавить отчет</string>
+    <string name="menu_user_overview">Обзор пользователей</string>
     <string name="login_header">Авторизоваться</string>
     <string name="sample_breed">Австралийская овчарка</string>
     <string name="Breed">Порода</string>
@@ -123,4 +124,15 @@
 
     <string name="Donation">пожертвование</string>
     <string name="text_donate">Спасибо за поддержку!</string>
+
+    <string name="user_overview_title">Обзор пользователей</string>
+    <string name="user_overview_first_name">Имя:</string>
+    <string name="user_overview_last_name">Фамилия:</string>
+    <string name="user_overview_mail_address">Почтовый адрес:</string>
+    <string name="user_overview_phone_number">Номер телефона:</string>
+    <string name="user_overview_logout_button">ВЫХОД</string>
+    <string name="user_overview_sample_info">Образец информации</string>
+    <string name="user_overview_no_first_name">Без имени</string>
+    <string name="user_overview_no_last_name">Нет Фамилия</string>
+    <string name="user_overview_no_phone">Номер телефона отсутствует</string>
 </resources>

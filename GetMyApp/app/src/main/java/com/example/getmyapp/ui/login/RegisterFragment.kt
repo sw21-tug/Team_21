@@ -165,6 +165,8 @@ class RegisterFragment : Fragment() {
         if (userId != null) {
             databaseUsers.child(userId).setValue(user)
         }
+
+        findNavController().navigate(R.id.action_nav_register_to_nav_login)
     }
 
     fun charsToBytes(chars: CharArray): ByteArray {
@@ -182,7 +184,7 @@ class RegisterFragment : Fragment() {
                 for ((key, value) in users) {
                     val name = value["name"]
                     if (name != null) {
-                        val user: User = User(
+                        val user = User(
                             key, name, value["firstName"], value["lastName"], value["mailAddress"],
                             value["phoneNumber"], value["hash"], value["salt"]
                         )

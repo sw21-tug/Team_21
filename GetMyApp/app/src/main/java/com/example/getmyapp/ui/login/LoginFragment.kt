@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.getmyapp.R
 import com.example.getmyapp.database.User
+import com.example.getmyapp.utils.utils
 import com.google.firebase.database.*
 import org.bouncycastle.crypto.generators.SCrypt
 import java.nio.ByteBuffer
@@ -99,7 +100,7 @@ class LoginFragment : Fragment() {
                         for ((key, value) in users) {
                             val name = value["name"]
                             if (name != null) {
-                                val user: User = User(
+                                val user = User(
                                     key, name, value["firstName"], value["lastName"], value["mailAddress"],
                                     value["phoneNumber"], value["hash"], value["salt"]
                                 )
@@ -143,6 +144,8 @@ class LoginFragment : Fragment() {
                     Arrays.fill(password, '\u0000')
                     Arrays.fill(passwordByteArray, 0.toByte())
 
+                    utils.saveLoginState(root.context, user!!)
+
                     findNavController().navigate(R.id.action_nav_login_to_nav_home)
                 }
             }
@@ -169,7 +172,7 @@ class LoginFragment : Fragment() {
                 for ((key, value) in users) {
                     val name = value["name"]
                     if (name != null) {
-                        val user: User = User(
+                        val user = User(
                             key, name, value["firstName"], value["lastName"], value["mailAddress"],
                             value["phoneNumber"], value["hash"], value["salt"]
                         )

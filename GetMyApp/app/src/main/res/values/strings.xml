@@ -16,6 +16,7 @@
     <string name="menu_donate">Donate</string>
     <string name="menu_changelang">Change Language</string>
     <string name="menu_add_report">Add Report</string>
+    <string name="menu_user_overview">User Overview</string>
 
     <string name="login_header">Login</string>
     <string name="login_username">Username:</string>
@@ -130,4 +131,14 @@
     <string name="generic_error">Please provide an input</string>
     <string name="Donation">Donation</string>
     <string name="text_donate">Thank you for your support!</string>
+    <string name="user_overview_title">User Overview</string>
+    <string name="user_overview_first_name">First Name:</string>
+    <string name="user_overview_last_name">Last Name:</string>
+    <string name="user_overview_mail_address">Mail Address:</string>
+    <string name="user_overview_phone_number">Phone Number:</string>
+    <string name="user_overview_logout_button">LOGOUT</string>
+    <string name="user_overview_sample_info">Sample Info</string>
+    <string name="user_overview_no_first_name">No First Name</string>
+    <string name="user_overview_no_last_name">No Last Name</string>
+    <string name="user_overview_no_phone">No Phone Number</string>
 </resources>
