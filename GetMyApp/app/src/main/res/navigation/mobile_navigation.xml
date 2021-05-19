@@ -33,12 +33,20 @@
         android:id="@+id/nav_missing"
         android:name="com.example.getmyapp.ui.missing.MissingFragment"
         android:label="@string/menu_missing"
-        tools:layout="@layout/fragment_missing" />
+        tools:layout="@layout/fragment_missing" >
+        <action
+            android:id="@+id/action_nav_missing_to_nav_add_report"
+            app:destination="@id/nav_add_report" />
+    </fragment>
     <fragment
         android:id="@+id/nav_found"
         android:name="com.example.getmyapp.ui.found.FoundFragment"
         android:label="@string/menu_found"
-        tools:layout="@layout/fragment_found" />
+        tools:layout="@layout/fragment_found" >
+        <action
+            android:id="@+id/action_nav_found_to_nav_add_report"
+            app:destination="@id/nav_add_report" />
+    </fragment>
     <fragment
         android:id="@+id/nav_register"
         android:name="com.example.getmyapp.ui.login.RegisterFragment"
@@ -58,4 +66,15 @@
         android:name="com.example.getmyapp.ui.iap.InAppPurchaseFragment"
         android:label="@string/menu_donate"
         tools:layout="@layout/fragment_iap" />
+    <fragment
+        android:id="@+id/nav_add_report"
+        android:name="com.example.getmyapp.ui.report.AddReportFragment"
+        android:label="@string/menu_add_report" >
+        <action
+            android:id="@+id/action_nav_add_report_to_nav_missing"
+            app:destination="@id/nav_missing" />
+        <action
+            android:id="@+id/action_nav_add_report_to_nav_found"
+            app:destination="@id/nav_found" />
+    </fragment>
 </navigation>

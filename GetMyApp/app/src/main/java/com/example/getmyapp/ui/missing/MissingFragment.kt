@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
-import com.example.getmyapp.database.User
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -25,7 +27,10 @@ class MissingFragment : Fragment() {
 
     private lateinit var listOfPets: ArrayList<Pet>
 
-    private lateinit var  recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
+
+    private lateinit var addMissingPetButton: FloatingActionButton
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -67,21 +72,12 @@ class MissingFragment : Fragment() {
 
         listOfPets = ArrayList<Pet>()
 
-        /*
-        var petId = databasePets.push().key
+        addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
-        if (petId != null) {
-            pet1.setId(petId)
-            databasePets.child(petId).setValue(pet1)
+        addMissingPetButton.setOnClickListener {
+            val bundle = bundleOf("found" to false)
+            findNavController().navigate(R.id.action_nav_missing_to_nav_add_report, bundle)
         }
-
-        petId = databasePets.push().key
-
-        if (petId != null) {
-            pet2.setId(petId)
-            databasePets.child(petId).setValue(pet2)
-        }
-        */
 
         /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
@@ -107,11 +103,11 @@ class MissingFragment : Fragment() {
                 val ownerId = value["ownerId"]
                 val region = value["region"]
                 val lastSeen = value["lastSeen"]
-                val found = value["found"]
+                val found = value["found"].toString()
                 if (found != null && found.compareTo("false") == 0) {
                     if (chipNo != null && name != null && species != null && breed != null && color != null
                         && age != null && gender != null && ownerId != null && region != null && lastSeen != null) {
-                        val pet: Pet = Pet(
+                        val pet = Pet(
                             key, chipNo, name, species, breed, color, age, gender,
                             ownerId, region, lastSeen, found.toBoolean()
                         )
