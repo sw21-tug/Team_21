@@ -17,9 +17,6 @@
             android:id="@+id/action_nav_home_to_nav_found"
             app:destination="@id/nav_found" />
         <action
-            android:id="@+id/action_nav_home_to_nav_user_overview"
-            app:destination="@id/nav_user_overview" />
-        <action
             android:id="@+id/action_nav_home_to_nav_login"
             app:destination="@id/nav_login" />
     </fragment>
@@ -94,4 +91,5 @@
             android:id="@+id/action_nav_user_overview_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
+    <action android:id="@+id/action_global_nav_user_overview" app:destination="@id/nav_user_overview" />
 </navigation>
