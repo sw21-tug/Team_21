@@ -52,6 +52,14 @@ class AddReportFragment: Fragment() {
 
         found = arguments?.getBoolean("found") == true
 
+        var date: TextView = root.findViewById<TextView>(R.id.createReportLastSeenTextView)
+        if (found){
+            date.text = resources.getString(R.string.pet_found_date)
+        }
+        else{
+            date.text = resources.getString(R.string.last_seen)
+        }
+
         return root
     }
 
@@ -97,7 +105,7 @@ class AddReportFragment: Fragment() {
         lastSeen = lastSeenEditText.text.toString()
         chipNumber = chipNumberEditText.text.toString()
 
-        if (name.isEmpty()) {
+        if (!found && name.isEmpty()) {
             nameEditText.error = activity?.resources?.getString(R.string.generic_error)
             errorOccurred = true
         }
@@ -128,10 +136,6 @@ class AddReportFragment: Fragment() {
         }
         if (lastSeen.isEmpty()) {
             lastSeenEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccurred = true
-        }
-        if (chipNumber.isEmpty()) {
-            chipNumberEditText.error = activity?.resources?.getString(R.string.generic_error)
             errorOccurred = true
         }
 
