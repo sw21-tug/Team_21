@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
+import com.example.getmyapp.utils.utils
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -29,13 +30,13 @@ class AddReportFragment: Fragment() {
     private lateinit var databasePets: DatabaseReference
 
     private var found: Boolean = false
-
+    private lateinit var root:View
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_add_pet, container, false)
+        root = inflater.inflate(R.layout.fragment_add_pet, container, false)
 
         val species = resources.getStringArray(R.array.animal_species_array)
         val speciesSpinner = root.findViewById<Spinner>(R.id.createReportSpeciesSpinner)
@@ -68,8 +69,12 @@ class AddReportFragment: Fragment() {
 
         val petId = databasePets.push().key
 
+        val user = utils.getLoginState(root.context)
+        if (user == null){
+            return
+        }
         // TODO: UserID
-        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, "123", region, lastSeen, found)
+        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found)
 
         if (petId != null) {
             databasePets.child(petId).setValue(pet)

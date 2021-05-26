@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
+import com.example.getmyapp.utils.utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 
@@ -73,8 +74,11 @@ class FoundFragment : Fragment() {
         addFoundPetButton = root.findViewById<FloatingActionButton>(R.id.addFoundPetButton)
 
         addFoundPetButton.setOnClickListener {
-            val bundle = bundleOf("found" to true)
-            findNavController().navigate(R.id.action_nav_found_to_nav_add_report, bundle)
+            val user = utils.getLoginState(root.context)
+            if (user != null) {
+                val bundle = bundleOf("found" to true)
+                findNavController().navigate(R.id.action_nav_found_to_nav_add_report, bundle)
+            }
         }
 
         return root

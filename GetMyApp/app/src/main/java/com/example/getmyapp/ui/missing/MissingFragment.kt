@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
+import com.example.getmyapp.utils.utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import java.util.*
@@ -75,8 +76,11 @@ class MissingFragment : Fragment() {
         addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
         addMissingPetButton.setOnClickListener {
-            val bundle = bundleOf("found" to false)
-            findNavController().navigate(R.id.action_nav_missing_to_nav_add_report, bundle)
+            val user = utils.getLoginState(root.context)
+            if (user != null) {
+                val bundle = bundleOf("found" to false)
+                findNavController().navigate(R.id.action_nav_missing_to_nav_add_report, bundle)
+            }
         }
 
         /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
