@@ -63,6 +63,13 @@ class MissingFragment : Fragment() {
             regionSpinner.adapter = adapter
         }
 
+        val addButton: FloatingActionButton = root.findViewById(R.id.addMissingPetButton)
+        val user = utils.getLoginState(root.context)
+        if (user != null)
+            addButton.visibility = View.VISIBLE
+        else
+            addButton.visibility = View.INVISIBLE
+
         recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
 
         recyclerView.layoutManager = LinearLayoutManager(root.context)
@@ -76,11 +83,8 @@ class MissingFragment : Fragment() {
         addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
         addMissingPetButton.setOnClickListener {
-            val user = utils.getLoginState(root.context)
-            if (user != null) {
-                val bundle = bundleOf("found" to false)
-                findNavController().navigate(R.id.action_nav_missing_to_nav_add_report, bundle)
-            }
+            val bundle = bundleOf("found" to false)
+            findNavController().navigate(R.id.action_nav_missing_to_nav_add_report, bundle)
         }
 
         /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
