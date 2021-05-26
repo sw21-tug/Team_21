@@ -69,4 +69,5 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-database:20.0.0'
     implementation platform('com.google.firebase:firebase-bom:27.1.0')
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha03'
 }
