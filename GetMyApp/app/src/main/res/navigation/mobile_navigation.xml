@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_nav_missing_to_nav_add_report"
             app:destination="@id/nav_add_report" />
+        <action
+            android:id="@+id/action_nav_missing_to_nav_extended_report"
+            app:destination="@id/nav_extended_report" />
     </fragment>
     <fragment
         android:id="@+id/nav_found"
@@ -49,6 +52,9 @@
         <action
             android:id="@+id/action_nav_found_to_nav_add_report"
             app:destination="@id/nav_add_report" />
+        <action
+            android:id="@+id/action_nav_found_to_nav_extended_report"
+            app:destination="@id/nav_extended_report" />
     </fragment>
     <fragment
         android:id="@+id/nav_register"
@@ -92,4 +98,8 @@
             app:destination="@id/nav_home" />
     </fragment>
     <action android:id="@+id/action_global_nav_user_overview" app:destination="@id/nav_user_overview" />
+    <fragment
+        android:id="@+id/nav_extended_report"
+        android:name="com.example.getmyapp.ui.extendedreport.ExtendedReportFragment">
+    </fragment>
 </navigation>

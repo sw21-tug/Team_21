@@ -198,4 +198,37 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/dog_sample"
         android:contentDescription="@string/pet_spezies_sample"/>
+
+    <ImageButton
+        android:id="@+id/imageButtonPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_phone_24"
+        android:contentDescription="@string/icon"/>
+
+    <ImageButton
+        android:id="@+id/imageButtonEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonMessage"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonPhone"
+        app:srcCompat="@drawable/ic_baseline_email_24"
+        android:contentDescription="@string/icon"/>
+
+    <ImageButton
+        android:id="@+id/imageButtonMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_chat_bubble_24"
+        android:contentDescription="@string/icon"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
