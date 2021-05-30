@@ -208,7 +208,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_baseline_phone_24"
-        android:contentDescription="@string/icon"/>
+        android:contentDescription="Phone"/>
 
     <ImageButton
         android:id="@+id/imageButtonEmail"
@@ -219,7 +219,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageButtonMessage"
         app:layout_constraintStart_toEndOf="@+id/imageButtonPhone"
         app:srcCompat="@drawable/ic_baseline_email_24"
-        android:contentDescription="@string/icon"/>
+        android:contentDescription="Email"/>
 
     <ImageButton
         android:id="@+id/imageButtonMessage"
@@ -230,5 +230,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_chat_bubble_24"
-        android:contentDescription="@string/icon"/>
+        android:contentDescription="Message"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
