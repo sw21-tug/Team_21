@@ -2,6 +2,7 @@ package com.example.getmyapp.ui.extendedreport
 
 import android.content.Intent
 import android.net.Uri
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,6 +51,13 @@ class ExtendedReportFragment : Fragment() {
 
         val ownerID = arguments?.getString("ownerID");
 
+
+        val phoneButton = root.findViewById<ImageButton>(R.id.imageButtonPhone)
+        phoneButton.visibility = View.INVISIBLE
+
+        val emailButton = root.findViewById<ImageButton>(R.id.imageButtonEmail)
+        emailButton.visibility = View.INVISIBLE
+
         databaseUsers = FirebaseDatabase.getInstance().getReference("Users")
 
         databaseUsers.addListenerForSingleValueEvent(object :
@@ -75,6 +83,11 @@ class ExtendedReportFragment : Fragment() {
                                     value["hash"],
                                     value["salt"]
                                 )
+
+                                if (!user.phoneNumber.isNullOrEmpty())
+                                    phoneButton.visibility = View.VISIBLE
+                                if (!user.mailAddress.isNullOrEmpty())
+                                    emailButton.visibility = View.VISIBLE
                                 break
                             }
                         }
@@ -87,14 +100,14 @@ class ExtendedReportFragment : Fragment() {
             }
         })
 
-        val phoneButton = root.findViewById<ImageButton>(R.id.imageButtonPhone)
+
+
         phoneButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse("tel:" + user!!.phoneNumber)
             requireActivity().startActivity(intent)
         }
 
-        val emailButton = root.findViewById<ImageButton>(R.id.imageButtonEmail)
         emailButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("mailto:" + user!!.mailAddress)
