@@ -104,13 +104,13 @@ class ExtendedReportFragment : Fragment() {
 
         phoneButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
-            intent.data = Uri.parse("tel:" + user!!.phoneNumber)
+            intent.data = Uri.parse("tel:" + user.phoneNumber)
             requireActivity().startActivity(intent)
         }
 
         emailButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("mailto:" + user!!.mailAddress)
+            intent.data = Uri.parse("mailto:" + user.mailAddress)
             requireActivity().startActivity(intent)
         }
 

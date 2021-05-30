@@ -1,203 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/extendedReportConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/extendedReportPetNameTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="250dp"
-        android:text="@string/name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/extendedReportPetNameInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:text="@string/example_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportPetNameTextView"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/extendedReportAnimalSpeciesTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/animal_species"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportPetNameTextView" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/extendedReportAnimalSpeciesInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/pet_spezies_sample"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportAnimalSpeciesTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportPetNameInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportAgeInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/example_age"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportColourInfoTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportBreedTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/Breed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportAnimalSpeciesTextView" />
+                <TextView
+                    android:id="@+id/extendedReportGenderTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/gender"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportGenderInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportRegionTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportBreedInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/sample_breed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportBreedTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportAnimalSpeciesInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportColourInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/sample_colour"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportBreedInfoTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportColourTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/Colour"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportBreedTextView" />
+                <TextView
+                    android:id="@+id/extendedReportAnimalSpeciesInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/pet_spezies_sample"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportPetNameInfoTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportColourInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/sample_colour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportColourTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportBreedInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportColourTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/Colour"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportColourInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportBreedTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportAgeTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/age"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportColourTextView" />
+                <TextView
+                    android:id="@+id/extendedReportRegionTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/region"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportRegionInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportAgeTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportAgeInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/example_age"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportAgeTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportColourInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportBreedTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="@string/Breed"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportBreedInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportAnimalSpeciesTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportRegionTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/region"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportAgeTextView" />
+                <TextView
+                    android:id="@+id/extendedReportPetNameTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/name"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportPetNameInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportImageView" />
 
-    <TextView
-        android:id="@+id/extendedReportRegionInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/example_region"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportRegionTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportAgeInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportLastSeenInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/sample_seen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportGenderInfoTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportGenderTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/gender"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportRegionTextView" />
+                <TextView
+                    android:id="@+id/extendedReportRegionInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/example_region"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportAgeInfoTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportGenderInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/example_gender"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportGenderTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportRegionInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportBreedInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="53dp"
+                    android:text="@string/sample_breed"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportAnimalSpeciesInfoTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportLastSeenTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/last_seen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportGenderTextView" />
+                <TextView
+                    android:id="@+id/extendedReportGenderInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/example_gender"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportRegionInfoTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportLastSeenInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/sample_seen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportLastSeenTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportGenderInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportAnimalSpeciesTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/animal_species"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportAnimalSpeciesInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportPetNameTextView" />
 
-    <TextView
-        android:id="@+id/extendedReportChipNumberTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/chipNo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportLastSeenTextView" />
+                <TextView
+                    android:id="@+id/extendedReportPetNameInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/example_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportImageView" />
 
-    <TextView
-        android:id="@+id/extendedReportChipNumberInfoTextView"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/example_chip_number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/extendedReportChipNumberTextView"
-        app:layout_constraintTop_toBottomOf="@+id/extendedReportLastSeenInfoTextView" />
+                <TextView
+                    android:id="@+id/extendedReportLastSeenTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/last_seen"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportLastSeenInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportGenderTextView" />
 
-    <ImageView
-        android:id="@+id/extendedReportImageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dog_sample"
-        android:contentDescription="@string/pet_spezies_sample"/>
+                <TextView
+                    android:id="@+id/extendedReportChipNumberTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/chipNo"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportChipNumberInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportLastSeenTextView" />
+
+                <TextView
+                    android:id="@+id/extendedReportChipNumberInfoTextView"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="51dp"
+                    android:text="@string/example_chip_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportLastSeenInfoTextView" />
+
+                <ImageView
+                    android:id="@+id/extendedReportImageView"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="106dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="105dp"
+                    android:contentDescription="@string/pet_spezies_sample"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/dog_sample" />
+
+                <TextView
+                    android:id="@+id/extendedReportAgeTextView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="52dp"
+                    android:text="@string/age"
+                    app:layout_constraintEnd_toStartOf="@+id/extendedReportAgeInfoTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/extendedReportColourTextView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/imageButtonPhone"
@@ -231,4 +268,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_chat_bubble_24"
         android:contentDescription="Message"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
