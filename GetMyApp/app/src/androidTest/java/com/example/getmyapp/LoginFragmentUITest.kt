@@ -106,7 +106,7 @@ class LoginFragmentUITest {
         launchFragmentInContainer<LoginFragment> ()
 
         Espresso.onView(ViewMatchers.withId(R.id.usernameInputEditText))
-            .perform(ViewActions.typeText("test"), ViewActions.closeSoftKeyboard())
+            .perform(ViewActions.typeText("TestUserLogin"), ViewActions.closeSoftKeyboard())
         Espresso.onView(ViewMatchers.withId(R.id.passwordInputEditText))
             .perform(ViewActions.typeText("IncorrectPassword"), ViewActions.closeSoftKeyboard())
         Espresso.onView(ViewMatchers.withId(R.id.loginButton))
