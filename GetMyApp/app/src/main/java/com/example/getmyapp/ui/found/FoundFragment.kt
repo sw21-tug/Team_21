@@ -1,5 +1,6 @@
 package com.example.getmyapp.ui.found
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
+import com.example.getmyapp.utils.utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 
@@ -57,8 +59,12 @@ class FoundFragment : Fragment() {
                 android.R.layout.simple_spinner_item, region)
             regionSpinner.adapter = adapter
         }
-
-
+        val addButton: FloatingActionButton = root.findViewById(R.id.addFoundPetButton)
+        val user = utils.getLoginState(root.context)
+        if (user != null)
+            addButton.visibility = View.VISIBLE
+        else
+            addButton.visibility = View.INVISIBLE
 
         recyclerView = root.findViewById<RecyclerView>(R.id.foundPetsRecyclerView)
 
@@ -73,6 +79,7 @@ class FoundFragment : Fragment() {
         addFoundPetButton = root.findViewById<FloatingActionButton>(R.id.addFoundPetButton)
 
         addFoundPetButton.setOnClickListener {
+
             val bundle = bundleOf("found" to true)
             findNavController().navigate(R.id.action_nav_found_to_nav_add_report, bundle)
         }
