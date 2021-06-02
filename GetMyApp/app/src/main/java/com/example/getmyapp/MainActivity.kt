@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_user -> {
                 if (utils.getLoginState(applicationContext) == null)
-                    findNavController(R.id.nav_host_fragment).navigate(R.id.action_nav_home_to_nav_login)
+                    findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_nav_login)
                 else
                     findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_nav_user_overview)
                 true

@@ -135,4 +135,7 @@
     <string name="user_overview_no_first_name">Без имени</string>
     <string name="user_overview_no_last_name">Нет Фамилия</string>
     <string name="user_overview_no_phone">Номер телефона отсутствует</string>
+    <string name="pet_found_date">Найти на</string>
+
+    <string name="icon">Кнопка изображения контакта</string>
 </resources>

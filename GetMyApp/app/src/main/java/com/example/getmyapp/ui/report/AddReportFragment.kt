@@ -30,9 +30,9 @@ class AddReportFragment: Fragment() {
     private lateinit var databasePets: DatabaseReference
 
     private var found: Boolean = false
-
+  
     private lateinit var root: View
-
+  
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,6 +55,14 @@ class AddReportFragment: Fragment() {
 
         found = arguments?.getBoolean("found") == true
 
+        var date: TextView = root.findViewById<TextView>(R.id.createReportLastSeenTextView)
+        if (found){
+            date.text = resources.getString(R.string.pet_found_date)
+        }
+        else{
+            date.text = resources.getString(R.string.last_seen)
+        }
+
         return root
     }
 
@@ -63,7 +71,12 @@ class AddReportFragment: Fragment() {
 
         val petId = databasePets.push().key
 
-        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, utils.getLoginState(root.context)!!.userId, region, lastSeen, found)
+        val user = utils.getLoginState(root.context)
+        if (user == null){
+            return
+        }
+        
+        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found)
 
         if (petId != null) {
             databasePets.child(petId).setValue(pet)
@@ -99,7 +112,7 @@ class AddReportFragment: Fragment() {
         lastSeen = lastSeenEditText.text.toString()
         chipNumber = chipNumberEditText.text.toString()
 
-        if (name.isEmpty()) {
+        if (!found && name.isEmpty()) {
             nameEditText.error = activity?.resources?.getString(R.string.generic_error)
             errorOccurred = true
         }
@@ -130,10 +143,6 @@ class AddReportFragment: Fragment() {
         }
         if (lastSeen.isEmpty()) {
             lastSeenEditText.error = activity?.resources?.getString(R.string.generic_error)
-            errorOccurred = true
-        }
-        if (chipNumber.isEmpty()) {
-            chipNumberEditText.error = activity?.resources?.getString(R.string.generic_error)
             errorOccurred = true
         }
 
