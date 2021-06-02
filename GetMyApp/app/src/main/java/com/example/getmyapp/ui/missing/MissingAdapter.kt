@@ -52,7 +52,7 @@ class MissingAdapter(private val dataSet: ArrayList<Pet>) :
                 "color" to dataSet[position].color, "gender" to dataSet[position].gender,
                 "lastSeen" to dataSet[position].lastSeen, "name" to dataSet[position].name,
                 "region" to dataSet[position].region, "species" to dataSet[position].species,
-                "age" to dataSet[position].age)
+                "age" to dataSet[position].age, "ownerID" to dataSet[position].ownerId)
             findNavController(view).navigate(R.id.action_nav_missing_to_nav_extended_report, bundle)
         }
     }

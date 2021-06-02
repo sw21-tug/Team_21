@@ -30,7 +30,9 @@ class AddReportFragment: Fragment() {
     private lateinit var databasePets: DatabaseReference
 
     private var found: Boolean = false
-    private lateinit var root:View
+  
+    private lateinit var root: View
+  
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -73,7 +75,7 @@ class AddReportFragment: Fragment() {
         if (user == null){
             return
         }
-        // TODO: UserID
+        
         val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found)
 
         if (petId != null) {
