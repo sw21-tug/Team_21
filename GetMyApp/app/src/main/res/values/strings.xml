@@ -143,4 +143,7 @@
     <string name="user_overview_no_first_name">No First Name</string>
     <string name="user_overview_no_last_name">No Last Name</string>
     <string name="user_overview_no_phone">No Phone Number</string>
+    <string name="pet_found_date">Found on</string>
+
+    <string name="icon">Contact Image Button</string>
 </resources>

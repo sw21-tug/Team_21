@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
@@ -42,6 +44,17 @@ class FoundAdapter(private val dataSet: ArrayList<Pet>) :
         viewHolder.breedTextView.text = dataSet[position].breed
         viewHolder.colorTextView.text = dataSet[position].color
         viewHolder.lastSeenTextView.text = dataSet[position].lastSeen
+        val view = viewHolder.itemView
+        view.setOnClickListener{
+            val bundle = bundleOf("age" to dataSet[position].age,
+                "breed" to dataSet[position].breed, "chipNo" to dataSet[position].chipNo,
+                "color" to dataSet[position].color, "gender" to dataSet[position].gender,
+                "lastSeen" to dataSet[position].lastSeen, "name" to dataSet[position].name,
+                "region" to dataSet[position].region, "species" to dataSet[position].species,
+                "age" to dataSet[position].age)
+            Navigation.findNavController(view)
+                .navigate(R.id.action_nav_found_to_nav_extended_report, bundle)
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
