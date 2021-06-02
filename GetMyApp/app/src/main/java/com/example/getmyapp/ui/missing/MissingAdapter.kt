@@ -4,9 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
+import org.w3c.dom.Text
 
 class MissingAdapter(private val dataSet: ArrayList<Pet>) :
     RecyclerView.Adapter<MissingAdapter.ViewHolder>() {
@@ -28,7 +32,6 @@ class MissingAdapter(private val dataSet: ArrayList<Pet>) :
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.missing_row_item, viewGroup, false)
-
         return ViewHolder(view)
     }
 
@@ -42,6 +45,16 @@ class MissingAdapter(private val dataSet: ArrayList<Pet>) :
         viewHolder.breedTextView.text = dataSet[position].breed
         viewHolder.colorTextView.text = dataSet[position].color
         viewHolder.lastSeenTextView.text = dataSet[position].lastSeen
+        val view = viewHolder.itemView
+        view.setOnClickListener{
+            val bundle = bundleOf("age" to dataSet[position].age,
+                "breed" to dataSet[position].breed, "chipNo" to dataSet[position].chipNo,
+                "color" to dataSet[position].color, "gender" to dataSet[position].gender,
+                "lastSeen" to dataSet[position].lastSeen, "name" to dataSet[position].name,
+                "region" to dataSet[position].region, "species" to dataSet[position].species,
+                "age" to dataSet[position].age)
+            findNavController(view).navigate(R.id.action_nav_missing_to_nav_extended_report, bundle)
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
