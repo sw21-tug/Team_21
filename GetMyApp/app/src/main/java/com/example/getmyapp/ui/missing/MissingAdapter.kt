@@ -47,7 +47,7 @@ class MissingAdapter(private val dataSet: ArrayList<Pet>) :
         viewHolder.lastSeenTextView.text = dataSet[position].lastSeen
         val view = viewHolder.itemView
         view.setOnClickListener{
-            val bundle = bundleOf("age" to dataSet[position].age,
+            val bundle = bundleOf(
                 "breed" to dataSet[position].breed, "chipNo" to dataSet[position].chipNo,
                 "color" to dataSet[position].color, "gender" to dataSet[position].gender,
                 "lastSeen" to dataSet[position].lastSeen, "name" to dataSet[position].name,
