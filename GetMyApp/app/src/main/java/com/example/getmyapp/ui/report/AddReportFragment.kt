@@ -87,37 +87,38 @@ class AddReportFragment: Fragment() {
 
         val petId = databasePets.push().key
 
-        val user = utils.getLoginState(root.context)
-        if (user == null){
-            return
-        }
-        // TODO: UserID
-        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found)
+        val user = utils.getLoginState(root.context) ?: return
+
         val imageRef = storagePets.child("Pets/${petId}")
-        val uploadTask = imageRef.putFile(image)
+        imageRef.putFile(image)
 
-        uploadTask.continueWithTask { task ->
-            if (!task.isSuccessful) {
-                task.exception?.let {
-                    throw it
-                }
-            }
-            imageRef.downloadUrl
-        }.addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                val imageLink = task.result
-                // TODO: imageLink instead LastSeen
-                val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, "123", region, imageLink.toString(), found)
+        val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found)
+        if (petId != null)
+            databasePets.child(petId).setValue(pet)
 
-                if (petId != null) {
-                    databasePets.child(petId).setValue(pet)
-                }
-            }
-        }
+//        uploadTask.continueWithTask { task ->
+//            if (!task.isSuccessful) {
+//                task.exception?.let {
+//                    throw it
+//                }
+//            }
+//            imageRef.downloadUrl
+//        }.addOnCompleteListener { task ->
+//            if (task.isSuccessful) {
+//                val imageLink = task.result
+//                //val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, "123", region, imageLink.toString(), found)
+//
+//                val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found, imageLink.toString())
+//                if (petId != null) {
+//                    databasePets.child(petId).setValue(pet)
+//                }
+//            }
+//        }
 
-
-        if (found) findNavController().navigate(R.id.action_nav_add_report_to_nav_found)
-        else findNavController().navigate(R.id.action_nav_add_report_to_nav_missing)
+        if (found)
+            findNavController().navigate(R.id.action_nav_add_report_to_nav_found)
+        else
+            findNavController().navigate(R.id.action_nav_add_report_to_nav_missing)
     }
 
     private fun getInputData(): Boolean {

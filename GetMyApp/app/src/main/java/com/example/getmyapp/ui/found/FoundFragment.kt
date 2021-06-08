@@ -59,12 +59,13 @@ class FoundFragment : Fragment() {
                 android.R.layout.simple_spinner_item, region)
             regionSpinner.adapter = adapter
         }
-        val addButton: FloatingActionButton = root.findViewById(R.id.addFoundPetButton)
+
+        addFoundPetButton = root.findViewById(R.id.addFoundPetButton)
         val user = utils.getLoginState(root.context)
         if (user != null)
-            addButton.visibility = View.VISIBLE
+            addFoundPetButton.visibility = View.VISIBLE
         else
-            addButton.visibility = View.INVISIBLE
+            addFoundPetButton.visibility = View.INVISIBLE
 
         recyclerView = root.findViewById<RecyclerView>(R.id.foundPetsRecyclerView)
 
@@ -75,8 +76,6 @@ class FoundFragment : Fragment() {
         databasePets.addValueEventListener(petListener)
 
         listOfPets = ArrayList<Pet>()
-
-        addFoundPetButton = root.findViewById<FloatingActionButton>(R.id.addFoundPetButton)
 
         addFoundPetButton.setOnClickListener {
 
@@ -108,7 +107,6 @@ class FoundFragment : Fragment() {
                 val lastSeen = value["lastSeen"]
                 val found = value["found"].toString()
                 if ( found != null && found.compareTo("true") == 0) {
-
                     if (chipNo != null && name != null && species != null && breed != null && color != null
                         && age != null && gender != null && ownerId != null && region != null && lastSeen != null
                     ) {
@@ -117,7 +115,6 @@ class FoundFragment : Fragment() {
                             ownerId, region, lastSeen, found.toBoolean()
                         )
                         listOfPets.add(pet)
-
                     }
                 }
             }

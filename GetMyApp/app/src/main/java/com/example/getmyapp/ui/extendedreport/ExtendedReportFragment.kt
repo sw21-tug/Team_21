@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.getmyapp.R
 import com.example.getmyapp.ui.home.HomeViewModel
+import com.google.firebase.storage.FirebaseStorage
 
 class ExtendedReportFragment : Fragment() {
     override fun onCreateView(
@@ -28,6 +31,8 @@ class ExtendedReportFragment : Fragment() {
         val genderTextView : TextView = root.findViewById(R.id.extendedReportGenderTextView)
         val lastSeenTextView : TextView = root.findViewById(R.id.extendedReportLastSeenInfoTextView)
         val chipNrTextView : TextView = root.findViewById(R.id.extendedReportChipNumberInfoTextView)
+        val petImageView : ImageView = root.findViewById(R.id.extendedReportImageView)
+
         nameTextView.text = arguments?.getString("name")
         speciesTextView.text = arguments?.getString("species")
         breedTextView.text = arguments?.getString("breed")
@@ -37,6 +42,13 @@ class ExtendedReportFragment : Fragment() {
         genderTextView.text = arguments?.getString("gender")
         lastSeenTextView.text = arguments?.getString("lastSeen")
         chipNrTextView.text = arguments?.getString("chipNo")
+
+        val petId = arguments?.getString("petId")
+        val storagePets = FirebaseStorage.getInstance().reference
+        val imageRef = storagePets.child("Pets/${petId}")
+
+        Glide.with(root.context).load(imageRef).into(petImageView)
+
         return root
     }
 }

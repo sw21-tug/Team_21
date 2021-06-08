@@ -62,13 +62,13 @@ class MissingFragment : Fragment() {
                     android.R.layout.simple_spinner_item, region)
             regionSpinner.adapter = adapter
         }
+        addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
-        val addButton: FloatingActionButton = root.findViewById(R.id.addMissingPetButton)
         val user = utils.getLoginState(root.context)
         if (user != null)
-            addButton.visibility = View.VISIBLE
+            addMissingPetButton.visibility = View.VISIBLE
         else
-            addButton.visibility = View.INVISIBLE
+            addMissingPetButton.visibility = View.INVISIBLE
 
         recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
 
@@ -80,7 +80,6 @@ class MissingFragment : Fragment() {
 
         listOfPets = ArrayList<Pet>()
 
-        addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
         addMissingPetButton.setOnClickListener {
             val bundle = bundleOf("found" to false)
