@@ -32,7 +32,7 @@ class AddReportFragment: Fragment() {
     private lateinit var gender: String
     private lateinit var lastSeen: String
     private lateinit var chipNumber: String
-    private lateinit var image: Uri
+    private var image: Uri? = null
 
     private val selectImageResult = registerForActivityResult(ActivityResultContracts.GetContent()) {uri: Uri? ->
         if (uri != null) {
@@ -89,8 +89,11 @@ class AddReportFragment: Fragment() {
 
         val user = utils.getLoginState(root.context) ?: return
 
-        val imageRef = storagePets.child("Pets/${petId}")
-        imageRef.putFile(image)
+        if (image != null) {
+            val imageRef = storagePets.child("Pets/${petId}")
+            imageRef.putFile(image!!)
+        }
+
 
         val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found)
         if (petId != null)

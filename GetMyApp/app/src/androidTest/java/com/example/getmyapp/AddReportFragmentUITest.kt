@@ -86,14 +86,12 @@ class AddReportFragmentUITest {
 
         val errorText = InstrumentationRegistry.getInstrumentation().targetContext.resources.getString(R.string.generic_error)
 
-        onView(withId(R.id.createReportNameEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportBreedEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportColourEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportAgeEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportRegionEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportGenderEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportLastSeenEditText)).check(matches(hasErrorText(errorText)))
-        onView(withId(R.id.createReportChipNumberEditText)).check(matches(hasErrorText(errorText)))
 
         assert(navController.currentDestination?.id == R.id.nav_add_report)
     }
@@ -161,7 +159,7 @@ class AddReportFragmentUITest {
         onView(withId(R.id.createReportRegionEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportGenderEditText)).check(matches(hasErrorText(errorText)))
         onView(withId(R.id.createReportLastSeenEditText)).check(matches(hasErrorText(errorText)))
-        onView(withId(R.id.createReportChipNumberEditText)).check(matches(hasErrorText(errorText)))
+        //onView(withId(R.id.createReportChipNumberEditText)).check(matches(hasErrorText(errorText)))
 
         assert(navController.currentDestination?.id == R.id.nav_add_report)
     }

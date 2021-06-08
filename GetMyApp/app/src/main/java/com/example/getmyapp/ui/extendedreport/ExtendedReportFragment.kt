@@ -28,7 +28,7 @@ class ExtendedReportFragment : Fragment() {
         val colorTextView : TextView = root.findViewById(R.id.extendedReportColourInfoTextView)
         val ageTextView : TextView = root.findViewById(R.id.extendedReportAgeInfoTextView)
         val regionTextView : TextView = root.findViewById(R.id.extendedReportRegionInfoTextView)
-        val genderTextView : TextView = root.findViewById(R.id.extendedReportGenderTextView)
+        val genderTextView : TextView = root.findViewById(R.id.extendedReportGenderInfoTextView)
         val lastSeenTextView : TextView = root.findViewById(R.id.extendedReportLastSeenInfoTextView)
         val chipNrTextView : TextView = root.findViewById(R.id.extendedReportChipNumberInfoTextView)
         val petImageView : ImageView = root.findViewById(R.id.extendedReportImageView)
