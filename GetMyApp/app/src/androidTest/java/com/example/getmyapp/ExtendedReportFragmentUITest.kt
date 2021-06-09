@@ -25,7 +25,7 @@ class ExtendedReportFragmentUITest {
     @Throws(Exception::class)
     fun noUser() {
         val navController = TestNavHostController(
-                ApplicationProvider.getApplicationContext())
+            ApplicationProvider.getApplicationContext())
 
         launchFragmentInContainer {
             ExtendedReportFragment().also { fragment ->
@@ -50,22 +50,22 @@ class ExtendedReportFragmentUITest {
     fun userLoggedIn() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
 
-        val user = User("-Mbk0k0kjMC3fNUA0IPf", "TestUserLogin2", "first",
-                "last", "", "+43123456",
-            "TKb28Mq34092bvFkAdJy4DKFKbnyzML4hNXK/Q6H6is=", "VccTskbcTbli48F0Te4S6A==")
+        val user = User("-MbkUyaXVbYX9-jLY6Gq", "loginState", "first",
+            "last", "loginState@mail.com", "+43123456",
+            "rj2JQCVlC1fpKQT5g+k0D6VZsk3JlbKE9wpVW4JRx44=", "/03hYgFhkFxBY/UHHqVUIg==")
 
         utils.saveLoginState(context, user)
 
         val navController = TestNavHostController(
-                ApplicationProvider.getApplicationContext())
+            ApplicationProvider.getApplicationContext())
 
         launchFragmentInContainer(bundleOf("age" to "7",
             "breed" to "Dog", "chipNo" to "123469",
             "color" to "Black", "gender" to "Male",
             "lastSeen" to "12.07.19", "name" to "Justus",
             "region" to "Graz", "species" to "Labrador",
-            "ownerID" to "-Mbk0k0kjMC3fNUA0IPf",
-            "petId" to "-MabXlFqdLCgwGrybceN")) {
+            "ownerID" to "-MbkUyaXVbYX9-jLY6Gq",
+            "petId" to "--MbkWWO_HcaWq5T3fnp7")) {
             ExtendedReportFragment().also { fragment ->
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {
