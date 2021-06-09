@@ -59,13 +59,11 @@ class ExtendedReportFragment : Fragment() {
 
         val petId = arguments?.getString("petId")
         val storagePets = FirebaseStorage.getInstance().reference
-        val imageRef = storagePets.child("Pets/${petId}")
+        val imageRef = storagePets.child("Pets/${petId}.jpeg")
 
         Glide.with(root.context).load(imageRef).into(petImageView)
 
-
-        val ownerID = arguments?.getString("ownerID");
-
+        val ownerID = arguments?.getString("ownerID")
 
         val phoneButton = root.findViewById<ImageButton>(R.id.imageButtonPhone)
         phoneButton.visibility = View.INVISIBLE

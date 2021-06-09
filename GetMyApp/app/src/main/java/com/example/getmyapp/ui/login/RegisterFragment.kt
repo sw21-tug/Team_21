@@ -11,9 +11,7 @@ import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.room.Room
 import com.example.getmyapp.R
-import com.example.getmyapp.database.AppDatabase
 import com.example.getmyapp.database.User
 import org.bouncycastle.crypto.generators.SCrypt
 import java.nio.ByteBuffer
@@ -21,8 +19,6 @@ import java.nio.CharBuffer
 import java.nio.charset.StandardCharsets
 import java.security.SecureRandom
 import java.util.*
-
-import com.example.getmyapp.database.UserDao
 import com.google.firebase.database.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap

@@ -92,7 +92,7 @@ class AddReportFragment: Fragment() {
         val user = utils.getLoginState(root.context) ?: return
 
         if (image != null) {
-            val imageRef = storagePets.child("Pets/${petId}")
+            val imageRef = storagePets.child("Pets/${petId}.jpeg")
             imageRef.putFile(image!!)
         }
 
