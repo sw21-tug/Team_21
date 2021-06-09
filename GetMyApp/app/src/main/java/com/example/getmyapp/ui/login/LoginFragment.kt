@@ -100,14 +100,14 @@ class LoginFragment : Fragment() {
                         for ((key, value) in users) {
                             val name = value["name"]
                             if (name != null) {
-                                val user = User(
+                                user = User(
                                     key, name, value["firstName"], value["lastName"], value["mailAddress"],
                                     value["phoneNumber"], value["hash"], value["salt"]
                                 )
-                                listOfUsers.add(user)
+                                listOfUsers.add(user!!)
                             }
                         }
-
+                        user = null
                         user = listOfUsers.find { user -> user.name == username.toString() }
                     }
 

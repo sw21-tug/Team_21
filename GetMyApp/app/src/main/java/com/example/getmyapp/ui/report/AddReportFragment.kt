@@ -44,7 +44,9 @@ class AddReportFragment: Fragment() {
     private lateinit var storagePets: StorageReference
 
     private var found: Boolean = false
-    private lateinit var root:View
+
+    private lateinit var root: View
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -99,24 +101,6 @@ class AddReportFragment: Fragment() {
         if (petId != null)
             databasePets.child(petId).setValue(pet)
 
-//        uploadTask.continueWithTask { task ->
-//            if (!task.isSuccessful) {
-//                task.exception?.let {
-//                    throw it
-//                }
-//            }
-//            imageRef.downloadUrl
-//        }.addOnCompleteListener { task ->
-//            if (task.isSuccessful) {
-//                val imageLink = task.result
-//                //val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, "123", region, imageLink.toString(), found)
-//
-//                val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found, imageLink.toString())
-//                if (petId != null) {
-//                    databasePets.child(petId).setValue(pet)
-//                }
-//            }
-//        }
 
         if (found)
             findNavController().navigate(R.id.action_nav_add_report_to_nav_found)

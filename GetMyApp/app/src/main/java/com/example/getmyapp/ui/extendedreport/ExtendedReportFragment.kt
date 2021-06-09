@@ -1,9 +1,13 @@
 package com.example.getmyapp.ui.extendedreport
 
+import android.content.Intent
+import android.net.Uri
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -14,8 +18,18 @@ import com.bumptech.glide.Glide
 import com.example.getmyapp.R
 import com.example.getmyapp.ui.home.HomeViewModel
 import com.google.firebase.storage.FirebaseStorage
+import com.example.getmyapp.database.User
+import com.google.firebase.database.*
+import java.net.URI
+import java.util.*
+
 
 class ExtendedReportFragment : Fragment() {
+
+    private lateinit var databaseUsers: DatabaseReference
+
+    private lateinit var user: User
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,6 +62,73 @@ class ExtendedReportFragment : Fragment() {
         val imageRef = storagePets.child("Pets/${petId}")
 
         Glide.with(root.context).load(imageRef).into(petImageView)
+
+
+        val ownerID = arguments?.getString("ownerID");
+
+
+        val phoneButton = root.findViewById<ImageButton>(R.id.imageButtonPhone)
+        phoneButton.visibility = View.INVISIBLE
+
+        val emailButton = root.findViewById<ImageButton>(R.id.imageButtonEmail)
+        emailButton.visibility = View.INVISIBLE
+
+        databaseUsers = FirebaseDatabase.getInstance().getReference("Users")
+
+        databaseUsers.addListenerForSingleValueEvent(object :
+            ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot != null) {
+                    val users: HashMap<String, HashMap<String, String>> =
+                        dataSnapshot.getValue() as HashMap<String, HashMap<String, String>>
+
+                    if (users != null) {
+
+                        for ((key, value) in users) {
+                            val userID = value["userId"]
+
+                            if (userID != null && userID.equals(ownerID)) {
+                                user = User(
+                                    key,
+                                    value["name"]!!,
+                                    value["firstName"],
+                                    value["lastName"],
+                                    value["mailAddress"],
+                                    value["phoneNumber"],
+                                    value["hash"],
+                                    value["salt"]
+                                )
+
+                                if (!user.phoneNumber.isNullOrEmpty())
+                                    phoneButton.visibility = View.VISIBLE
+                                if (!user.mailAddress.isNullOrEmpty())
+                                    emailButton.visibility = View.VISIBLE
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
+
+
+
+        phoneButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:" + user.phoneNumber)
+            requireActivity().startActivity(intent)
+        }
+
+        emailButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("mailto:" + user.mailAddress)
+            requireActivity().startActivity(intent)
+        }
+
 
         return root
     }
