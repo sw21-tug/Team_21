@@ -143,4 +143,35 @@
     <string name="message_image_button_content_description">Сообщение</string>
 
     <string name="icon">Кнопка изображения контакта</string>
+
+    <string name="about_us_html"><![CDATA[
+        <h1 style="text-align:center">Получить моего питомца</h1>
+        <h3 style="text-align:center"><i>Приложение, которое поможет людям найти потерянных питомцев</i></h3>
+        <p style="text-align:center">Людям всегда тяжело терять любимого питомца. Вот где <i>Получить моего питомца</i> пригодится.
+        Приложение позволяет пользователям <em>сообщать о пропавших и найденных домашних</em> животных, чтобы помочь другим воссоединиться со своими собаками, кошками и т. Д.…</p>
+        <hr>
+        <p style="margin-bottom:1cm;">Команда позади <i>Получить моего питомца</i>:</p>
+        <h5>Владелец продукта</h5>
+        <ul>
+        <li>Ismael Ibrahim</li>
+        </ul>
+        <h5>Скрам Мастер</h5>
+        <ul>
+        <li>Christopher Oser</li>
+        </ul>
+        <h5>Старший разработчик</h5>
+        <ul>
+        <li>Michael Streibl</li>
+        </ul>
+        <h5>Младшие разработчики</h5>
+        <ul>
+        <li>Denis Tomic</li>
+        <li>Emil Winterleitner</li>
+        <li>Namik Barucija</li>
+        <li>Sabrina Hiden</li>
+        </ul>
+        <hr>
+        <p style="text-align:center"><small>Авторские права &copy; 2021 sw21-tug/Team_21<br>Все права защищены</small></p>
+        ]]>
+    </string>
 </resources>
