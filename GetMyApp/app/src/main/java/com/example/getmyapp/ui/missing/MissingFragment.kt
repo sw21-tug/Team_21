@@ -1,11 +1,11 @@
 package com.example.getmyapp.ui.missing
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -30,6 +30,8 @@ class MissingFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
 
     private lateinit var addMissingPetButton: FloatingActionButton
+
+    private lateinit var filterButton: Button
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -84,12 +86,30 @@ class MissingFragment : Fragment() {
             val bundle = bundleOf("found" to false)
             findNavController().navigate(R.id.action_nav_missing_to_nav_add_report, bundle)
         }
+        filterButton = root.findViewById<Button>(R.id.buttonFilterMissing)
 
-        /*missingViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })*/
+        filterButton.setOnClickListener{
+            val name = root.findViewById<SearchView>(R.id.nameSearchView).query.toString()
+            val breed = root.findViewById<SearchView>(R.id.breedSearchView).query.toString()
+            var species = speciesSpinner.selectedItem.toString()
+            var colour = colourSpinner.selectedItem.toString()
+            var region = regionSpinner.selectedItem.toString()
+            val missingAdapter = recyclerView.adapter as MissingAdapter
+            missingAdapter.removeFilter()
+            if(species == getString(R.string.select_species))
+                species = "default"
+            if(colour == getString(R.string.select_colour))
+                colour = "default"
+            if(region == getString(R.string.select_region))
+                region = "default"
+            if(name.isEmpty() && breed.isEmpty() && species == "default" && colour == "default" && region == "default")
+                missingAdapter.removeFilter()
+            missingAdapter.filterList(name, species, colour, breed, region)
+        }
+
         return root
     }
+
 
     // keeps track of all changes to pets DB
     val petListener = object : ValueEventListener {

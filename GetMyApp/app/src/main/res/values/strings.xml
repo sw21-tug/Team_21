@@ -71,9 +71,11 @@
         <item>Bird</item>
     </string-array>
 
+    <string name="select_colour">Select Colour</string>
+
     <string name="colour">Colour</string>
     <string-array name="colours_array">
-        <item>Select Colour</item>
+        <item>@string/select_colour</item>
         <item>Brown</item>
         <item>Black</item>
         <item>White</item>
@@ -83,9 +85,11 @@
         <item>Grey</item>
     </string-array>
 
+    <string name="select_region">Select Province</string>
+
     <string name="region">Region</string>
     <string-array name="regions_array">
-        <item>Select Province</item>
+        <item>@string/select_region</item>
         <item>Burgenland</item>
         <item>Kärnten</item>
         <item>Niederösterreich</item>
@@ -144,6 +148,7 @@
     <string name="user_overview_no_last_name">No Last Name</string>
     <string name="user_overview_no_phone">No Phone Number</string>
     <string name="pet_found_date">Found on</string>
+    <string name="filter_button">Filter</string>
     <string name="phone_image_button_content_description">Phone</string>
     <string name="email_image_button_content_description">Email</string>
     <string name="message_image_button_content_description">Message</string>

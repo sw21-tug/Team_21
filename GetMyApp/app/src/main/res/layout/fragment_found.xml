@@ -143,4 +143,13 @@
         android:contentDescription="@string/fab_found_content_description"
         android:focusable="true" />
 
+    <Button
+        android:id="@+id/buttonFilterFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="@string/filter_button"
+        app:layout_constraintStart_toEndOf="@+id/nameSearchView"
+        app:layout_constraintTop_toTopOf="@+id/nameSearchView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
