@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.SearchView
 import android.widget.Spinner
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -27,6 +29,8 @@ class FoundFragment : Fragment() {
     private lateinit var  recyclerView: RecyclerView
 
     private lateinit var addFoundPetButton: FloatingActionButton
+
+    private lateinit var filterButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -82,9 +86,28 @@ class FoundFragment : Fragment() {
             findNavController().navigate(R.id.action_nav_found_to_nav_add_report, bundle)
         }
 
+        filterButton = root.findViewById<Button>(R.id.buttonFilterFound)
+
+        filterButton.setOnClickListener{
+            val name = root.findViewById<SearchView>(R.id.nameSearchView).query.toString()
+            val breed = root.findViewById<SearchView>(R.id.breedSearchView).query.toString()
+            var species = speciesSpinner.selectedItem.toString()
+            var colour = colourSpinner.selectedItem.toString()
+            var region = regionSpinner.selectedItem.toString()
+            val foundAdapter = recyclerView.adapter as FoundAdapter
+            foundAdapter.removeFilter()
+            if(species == getString(R.string.select_species))
+                species = "default"
+            if(colour == getString(R.string.select_colour))
+                colour = "default"
+            if(region == getString(R.string.select_region))
+                region = "default"
+            if(name.isEmpty() && breed.isEmpty() && species == "default" && colour == "default" && region == "default")
+                foundAdapter.removeFilter()
+            foundAdapter.filterList(name, species, colour, breed, region)
+        }
+
         return root
-
-
     }
 
     val petListener = object : ValueEventListener {
