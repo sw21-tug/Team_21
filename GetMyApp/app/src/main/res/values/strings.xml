@@ -144,4 +144,35 @@
     <string name="pet_found_date">Found on</string>
 
     <string name="icon">Contact Image Button</string>
+
+    <string name="about_us_html"><![CDATA[
+        <h1 style="text-align:center">Get My Pet</h1>
+        <h3 style="text-align:center"><i>An app to help people find their lost pets</i></h3>
+        <p style="text-align:center">Losing a beloved pet is always a hard time for people. That\'s where <i>Get My Pet</i> comes in handy.
+        The app lets users <em>report missing and found pets</em> to help others reunite with their dogs, cats, etc…</p>
+        <hr>
+        <p style="margin-bottom:1cm;">The team behind <i>Get My Pet</i>:</p>
+        <h5>Product Owner</h5>
+        <ul>
+        <li>Ismael Ibrahim</li>
+        </ul>
+        <h5>Scrum Master</h5>
+        <ul>
+        <li>Christopher Oser</li>
+        </ul>
+        <h5>Senior Developer</h5>
+        <ul>
+        <li>Michael Streibl</li>
+        </ul>
+        <h5>Junior Developers</h5>
+        <ul>
+        <li>Denis Tomic</li>
+        <li>Emil Winterleitner</li>
+        <li>Namik Barucija</li>
+        <li>Sabrina Hiden</li>
+        </ul>
+        <hr>
+        <p style="text-align:center"><small>Copyright &copy; 2021 sw21-tug/Team_21<br>All rights reserved</small></p>
+        ]]>
+    </string>
 </resources>
