@@ -1,8 +1,12 @@
 package com.example.getmyapp.ui.missing
 
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.SearchView
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation.findNavController
@@ -10,11 +14,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
-import org.w3c.dom.Text
+import java.util.*
+import kotlin.collections.ArrayList
 
-class MissingAdapter(private val dataSet: ArrayList<Pet>) :
+class MissingAdapter(private var dataSet: ArrayList<Pet>) :
     RecyclerView.Adapter<MissingAdapter.ViewHolder>() {
 
+    private val originalDataSet: ArrayList<Pet> = dataSet
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
@@ -60,4 +66,23 @@ class MissingAdapter(private val dataSet: ArrayList<Pet>) :
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
 
+    fun filterList(name: String, species: String, color: String, breed: String, region: String) {
+        val filteredPets: ArrayList<Pet> = arrayListOf()
+        for (pet in dataSet) {
+            if(pet.name.toLowerCase(Locale.getDefault()).contains(name.toLowerCase(Locale.getDefault())) || name.isEmpty())
+                if(pet.species.toLowerCase(Locale.getDefault()).contains(species.toLowerCase(Locale.getDefault())) || species == "default")
+                    if(pet.color.toLowerCase(Locale.getDefault()).contains(color.toLowerCase(Locale.getDefault())) || color == "default")
+                        if(pet.breed.toLowerCase(Locale.getDefault()).contains(breed.toLowerCase(Locale.getDefault())) || breed.isEmpty())
+                            if(pet.region.toLowerCase(Locale.getDefault()).contains(region.toLowerCase(Locale.getDefault())) || region == "default")
+                                filteredPets.add(pet)
+        }
+        dataSet = filteredPets
+        notifyDataSetChanged()
+    }
+
+    fun removeFilter()
+    {
+        dataSet = originalDataSet
+        notifyDataSetChanged()
+    }
 }

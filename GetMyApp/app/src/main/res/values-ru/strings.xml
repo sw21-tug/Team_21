@@ -85,8 +85,11 @@
         <item>Кролик</item>
         <item>Птица</item>
     </string-array>
+
+    <string name="select_colour">Выбрать цвет</string>
+
     <string-array name="colours_array">
-        <item>Выберите цвет</item>
+        <item>@string/select_colour</item>
         <item>коричневый</item>
         <item>Чернить</item>
         <item>белый</item>
@@ -96,8 +99,10 @@
         <item>Серый</item>
     </string-array>
 
+    <string name="select_region">Выберите провинцию</string>
+
     <string-array name="regions_array">
-        <item>Выберите провинцию</item>
+        <item>@string/select_region</item>
         <item>Burgenland</item>
         <item>Kärnten</item>
         <item>Niederösterreich</item>
@@ -138,4 +143,5 @@
     <string name="pet_found_date">Найти на</string>
 
     <string name="icon">Кнопка изображения контакта</string>
+    <string name="filter_button">фильтр</string>
 </resources>
