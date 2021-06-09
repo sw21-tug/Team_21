@@ -23,7 +23,7 @@ class RegisterFragmentUITest {
         val navController = TestNavHostController(
                 ApplicationProvider.getApplicationContext())
 
-        val scenario = launchFragmentInContainer<RegisterFragment> {
+        val scenario = launchFragmentInContainer {
             RegisterFragment().also { fragment ->
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {

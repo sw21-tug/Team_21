@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GetMyApp</string>
+    <string name="app_name">GetMyPet</string>
     <string name="navigation_drawer_open">Открыть панель навигации</string>
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
     <string name="nav_header_title">Android Studio</string>
@@ -73,6 +73,8 @@
     <string name="Colour">Цвет</string>
     <string name="last_seen">Послед</string>
     <string name="sample_seen">01.01.2000</string>
+    <string name="image">Изображение:</string>
+    <string name="select_image">ВЫБРАТЬ ИЗОБРАЖЕНИЕ</string>
     <string name="lang_en">English</string>
     <string name="lang_ru">русский</string>
 
@@ -141,7 +143,41 @@
     <string name="user_overview_no_last_name">Нет Фамилия</string>
     <string name="user_overview_no_phone">Номер телефона отсутствует</string>
     <string name="pet_found_date">Найти на</string>
+    <string name="phone_image_button_content_description">Телефон</string>
+    <string name="email_image_button_content_description">Электронная почта</string>
+    <string name="message_image_button_content_description">Сообщение</string>
 
     <string name="icon">Кнопка изображения контакта</string>
     <string name="filter_button">фильтр</string>
+
+    <string name="about_us_html"><![CDATA[
+        <h1 style="text-align:center">Получить моего питомца</h1>
+        <h3 style="text-align:center"><i>Приложение, которое поможет людям найти потерянных питомцев</i></h3>
+        <p style="text-align:center">Людям всегда тяжело терять любимого питомца. Вот где <i>Получить моего питомца</i> пригодится.
+        Приложение позволяет пользователям <em>сообщать о пропавших и найденных домашних</em> животных, чтобы помочь другим воссоединиться со своими собаками, кошками и т. Д.…</p>
+        <hr>
+        <p style="margin-bottom:1cm;">Команда позади <i>Получить моего питомца</i>:</p>
+        <h5>Владелец продукта</h5>
+        <ul>
+        <li>Ismael Ibrahim</li>
+        </ul>
+        <h5>Скрам Мастер</h5>
+        <ul>
+        <li>Christopher Oser</li>
+        </ul>
+        <h5>Старший разработчик</h5>
+        <ul>
+        <li>Michael Streibl</li>
+        </ul>
+        <h5>Младшие разработчики</h5>
+        <ul>
+        <li>Denis Tomic</li>
+        <li>Emil Winterleitner</li>
+        <li>Namik Barucija</li>
+        <li>Sabrina Hiden</li>
+        </ul>
+        <hr>
+        <p style="text-align:center"><small>Авторские права &copy; 2021 sw21-tug/Team_21<br>Все права защищены</small></p>
+        ]]>
+    </string>
 </resources>

@@ -79,9 +79,9 @@ class UserOverviewFragmentTest {
 
         val context = InstrumentationRegistry.getInstrumentation().targetContext
 
-        val user = User("-Ma2sFCW-WSiE9LCeH7l", "loginState", "",
+        val user = User("-Mabg4lHBgT1gN-T1WEk", "loginState", "",
                 "", "loginState@mail.com", "",
-                "4Biwq1iQIoSnPTEeD8qm0bxb1/vFhfItOECuzMWBjJw=", "d11vy0H4Cu2AK8l5NHNVuA==")
+                "Hcue8O928dn1PdeUj8wQKtwcTFufWXv3cXgJJsYtaD0=", "v/D1eeGBNLb6/NA1dguROA==")
 
         utils.saveLoginState(context, user)
 

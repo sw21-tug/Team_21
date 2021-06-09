@@ -1,8 +1,6 @@
 package com.example.getmyapp.ui.iap
 
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.getmyapp.R
-import java.util.*
 
 class InAppPurchaseFragment : Fragment(){
     override fun onCreateView(

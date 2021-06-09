@@ -4,16 +4,18 @@ import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Button
 import android.widget.SearchView
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
+import com.google.firebase.storage.FirebaseStorage
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -31,6 +33,7 @@ class MissingAdapter(private var dataSet: ArrayList<Pet>) :
         val breedTextView: TextView = view.findViewById(R.id.breedSampleTextView)
         val colorTextView: TextView = view.findViewById(R.id.colorSampleTextView)
         val lastSeenTextView: TextView = view.findViewById(R.id.lastSeenSampleTextView)
+        val petImageView: ImageView = view.findViewById(R.id.petImageView)
     }
 
     // Create new views (invoked by the layout manager)
@@ -51,14 +54,22 @@ class MissingAdapter(private var dataSet: ArrayList<Pet>) :
         viewHolder.breedTextView.text = dataSet[position].breed
         viewHolder.colorTextView.text = dataSet[position].color
         viewHolder.lastSeenTextView.text = dataSet[position].lastSeen
+
+        val petId = dataSet[position].petId
+
+        val storagePets = FirebaseStorage.getInstance().reference
+        val imageRef = storagePets.child("Pets/${petId}.jpeg")
+
         val view = viewHolder.itemView
+        Glide.with(view.context).load(imageRef).into(viewHolder.petImageView)
+
         view.setOnClickListener{
-            val bundle = bundleOf("age" to dataSet[position].age,
+            val bundle = bundleOf(
                 "breed" to dataSet[position].breed, "chipNo" to dataSet[position].chipNo,
                 "color" to dataSet[position].color, "gender" to dataSet[position].gender,
                 "lastSeen" to dataSet[position].lastSeen, "name" to dataSet[position].name,
                 "region" to dataSet[position].region, "species" to dataSet[position].species,
-                "age" to dataSet[position].age, "ownerID" to dataSet[position].ownerId)
+                "age" to dataSet[position].age, "petId" to petId, "ownerID" to dataSet[position].ownerId)
             findNavController(view).navigate(R.id.action_nav_missing_to_nav_extended_report, bundle)
         }
     }

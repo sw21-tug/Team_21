@@ -41,8 +41,8 @@ class LoginFragment : Fragment() {
 //            textView.text = it
 //        })
 
-        val register_button: Button = root.findViewById(R.id.registerButton)
-        register_button.setOnClickListener {
+        val registerButton: Button = root.findViewById(R.id.registerButton)
+        registerButton.setOnClickListener {
             findNavController().navigate(R.id.action_nav_login_to_nav_register)
         }
 
@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
         return root
     }
 
-    fun getInputData() {
+    private fun getInputData() {
         val root = requireView()
 
         val usernameEditText = root.findViewById<EditText>(R.id.usernameInputEditText)

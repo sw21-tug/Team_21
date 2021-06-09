@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GetMyApp</string>
+    <string name="app_name">GetMyPet</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -117,6 +117,8 @@
     <string name="sample_colour">Grey</string>
     <string name="last_seen">Last Seen</string>
     <string name="sample_seen">01.01.2000</string>
+    <string name="image">Image:</string>
+    <string name="select_image">SELECT IMAGE</string>
 
     <string name="lang_en">English</string>
     <string name="lang_ru">русский</string>
@@ -147,5 +149,40 @@
     <string name="user_overview_no_phone">No Phone Number</string>
     <string name="pet_found_date">Found on</string>
     <string name="filter_button">Filter</string>
+    <string name="phone_image_button_content_description">Phone</string>
+    <string name="email_image_button_content_description">Email</string>
+    <string name="message_image_button_content_description">Message</string>
+
     <string name="icon">Contact Image Button</string>
+
+    <string name="about_us_html"><![CDATA[
+        <h1 style="text-align:center">Get My Pet</h1>
+        <h3 style="text-align:center"><i>An app to help people find their lost pets</i></h3>
+        <p style="text-align:center">Losing a beloved pet is always a hard time for people. That\'s where <i>Get My Pet</i> comes in handy.
+        The app lets users <em>report missing and found pets</em> to help others reunite with their dogs, cats, etc…</p>
+        <hr>
+        <p style="margin-bottom:1cm;">The team behind <i>Get My Pet</i>:</p>
+        <h5>Product Owner</h5>
+        <ul>
+        <li>Ismael Ibrahim</li>
+        </ul>
+        <h5>Scrum Master</h5>
+        <ul>
+        <li>Christopher Oser</li>
+        </ul>
+        <h5>Senior Developer</h5>
+        <ul>
+        <li>Michael Streibl</li>
+        </ul>
+        <h5>Junior Developers</h5>
+        <ul>
+        <li>Denis Tomic</li>
+        <li>Emil Winterleitner</li>
+        <li>Namik Barucija</li>
+        <li>Sabrina Hiden</li>
+        </ul>
+        <hr>
+        <p style="text-align:center"><small>Copyright &copy; 2021 sw21-tug/Team_21<br>All rights reserved</small></p>
+        ]]>
+    </string>
 </resources>
