@@ -37,13 +37,13 @@ class UserOverviewFragmentTest {
         utils.removeLoginState(context)
 
         val actionMenuItemView = onView(
-                allOf(withId(R.id.action_user), withContentDescription("User"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.toolbar),
-                                        2),
-                                0),
-                        isDisplayed()))
+            allOf(withId(R.id.action_user), withContentDescription("User"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.toolbar),
+                        2),
+                    0),
+                isDisplayed()))
         actionMenuItemView.perform(click())
 
         onView(withId(R.id.loginHeaderTextView)).check(matches(isDisplayed()))
@@ -54,19 +54,19 @@ class UserOverviewFragmentTest {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
 
         val user = User("-Ma2sFCW-WSiE9LCeH7l", "loginState", "",
-                "", "loginState@mail.com", "",
-                "4Biwq1iQIoSnPTEeD8qm0bxb1/vFhfItOECuzMWBjJw=", "d11vy0H4Cu2AK8l5NHNVuA==")
+            "", "loginState@mail.com", "",
+            "4Biwq1iQIoSnPTEeD8qm0bxb1/vFhfItOECuzMWBjJw=", "d11vy0H4Cu2AK8l5NHNVuA==")
 
         utils.saveLoginState(context, user)
 
         val actionMenuItemView = onView(
-                allOf(withId(R.id.action_user), withContentDescription("User"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.toolbar),
-                                        2),
-                                0),
-                        isDisplayed()))
+            allOf(withId(R.id.action_user), withContentDescription("User"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.toolbar),
+                        2),
+                    0),
+                isDisplayed()))
         actionMenuItemView.perform(click())
 
         onView(withId(R.id.userOverviewTitleTextView)).check(matches(isDisplayed()))
@@ -79,20 +79,20 @@ class UserOverviewFragmentTest {
 
         val context = InstrumentationRegistry.getInstrumentation().targetContext
 
-        val user = User("-Mabg4lHBgT1gN-T1WEk", "loginState", "",
-                "", "loginState@mail.com", "",
-                "Hcue8O928dn1PdeUj8wQKtwcTFufWXv3cXgJJsYtaD0=", "v/D1eeGBNLb6/NA1dguROA==")
+        val user = User("-MbkUyaXVbYX9-jLY6Gq", "loginState", "",
+            "", "loginState@mail.com", "",
+            "rj2JQCVlC1fpKQT5g+k0D6VZsk3JlbKE9wpVW4JRx44==", "/03hYgFhkFxBY/UHHqVUIg==")
 
         utils.saveLoginState(context, user)
 
         val actionMenuItemView = onView(
-                allOf(withId(R.id.action_user), withContentDescription("User"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.toolbar),
-                                        2),
-                                0),
-                        isDisplayed()))
+            allOf(withId(R.id.action_user), withContentDescription("User"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.toolbar),
+                        2),
+                    0),
+                isDisplayed()))
         actionMenuItemView.perform(click())
 
         onView(withId(R.id.userOverviewTitleTextView)).check(matches(isDisplayed()))
@@ -100,55 +100,55 @@ class UserOverviewFragmentTest {
         onView(withId(R.id.userOverviewMailInfoTextView)).check(matches(withText(user.mailAddress)))
 
         val materialButton2 = onView(
-                allOf(withId(R.id.userOverviewLogoutButton), withText("LOGOUT"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.nav_host_fragment),
-                                        0),
-                                6),
-                        isDisplayed()))
+            allOf(withId(R.id.userOverviewLogoutButton), withText("LOGOUT"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.nav_host_fragment),
+                        0),
+                    6),
+                isDisplayed()))
         materialButton2.perform(click())
 
         onView(withId(R.id.loginHeaderTextView)).check(matches(isDisplayed()))
 
         val appCompatEditText5 = onView(
-                allOf(withId(R.id.usernameInputEditText),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.nav_host_fragment),
-                                        0),
-                                2),
-                        isDisplayed()))
+            allOf(withId(R.id.usernameInputEditText),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.nav_host_fragment),
+                        0),
+                    2),
+                isDisplayed()))
         appCompatEditText5.perform(ViewActions.replaceText("loginState2"), ViewActions.closeSoftKeyboard())
 
         val appCompatEditText6 = onView(
-                allOf(withId(R.id.passwordInputEditText),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.nav_host_fragment),
-                                        0),
-                                4),
-                        isDisplayed()))
+            allOf(withId(R.id.passwordInputEditText),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.nav_host_fragment),
+                        0),
+                    4),
+                isDisplayed()))
         appCompatEditText6.perform(ViewActions.replaceText("geheim"), ViewActions.closeSoftKeyboard())
 
         val materialButton3 = onView(
-                allOf(withId(R.id.loginButton), withText("LOGIN"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.nav_host_fragment),
-                                        0),
-                                5),
-                        isDisplayed()))
+            allOf(withId(R.id.loginButton), withText("LOGIN"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.nav_host_fragment),
+                        0),
+                    5),
+                isDisplayed()))
         materialButton3.perform(click())
 
         val actionMenuItemView3 = onView(
-                allOf(withId(R.id.action_user), withContentDescription("User"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.toolbar),
-                                        2),
-                                0),
-                        isDisplayed()))
+            allOf(withId(R.id.action_user), withContentDescription("User"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.toolbar),
+                        2),
+                    0),
+                isDisplayed()))
         actionMenuItemView3.perform(click())
 
         onView(withId(R.id.userOverviewTitleTextView)).check(matches(isDisplayed()))
@@ -157,7 +157,7 @@ class UserOverviewFragmentTest {
     }
 
     private fun childAtPosition(
-            parentMatcher: Matcher<View>, position: Int): Matcher<View> {
+        parentMatcher: Matcher<View>, position: Int): Matcher<View> {
 
         return object : TypeSafeMatcher<View>() {
             override fun describeTo(description: Description) {
