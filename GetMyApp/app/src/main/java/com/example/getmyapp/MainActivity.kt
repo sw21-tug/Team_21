@@ -13,7 +13,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.getmyapp.utils.utils
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 

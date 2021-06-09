@@ -1,6 +1,5 @@
 package com.example.getmyapp.ui.found
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -67,7 +66,7 @@ class FoundFragment : Fragment() {
         else
             addFoundPetButton.visibility = View.INVISIBLE
 
-        recyclerView = root.findViewById<RecyclerView>(R.id.foundPetsRecyclerView)
+        recyclerView = root.findViewById(R.id.foundPetsRecyclerView)
 
         recyclerView.layoutManager = LinearLayoutManager(root.context)
 
@@ -75,7 +74,7 @@ class FoundFragment : Fragment() {
 
         databasePets.addValueEventListener(petListener)
 
-        listOfPets = ArrayList<Pet>()
+        listOfPets = ArrayList()
 
         addFoundPetButton.setOnClickListener {
 

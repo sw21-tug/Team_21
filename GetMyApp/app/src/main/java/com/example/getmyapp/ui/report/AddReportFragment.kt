@@ -14,10 +14,8 @@ import com.example.getmyapp.database.Pet
 import com.example.getmyapp.utils.utils
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.ktx.storage
 
 class AddReportFragment: Fragment() {
 
@@ -65,7 +63,7 @@ class AddReportFragment: Fragment() {
         databasePets = FirebaseDatabase.getInstance().getReference("Pets")
         storagePets = FirebaseStorage.getInstance().reference
 
-        saveButton = root.findViewById<Button>(R.id.saveButton)
+        saveButton = root.findViewById(R.id.saveButton)
         saveButton.setOnClickListener{ addPet() }
 
         val selectImageButton = root.findViewById<Button>(R.id.selectImageButton)
@@ -73,7 +71,7 @@ class AddReportFragment: Fragment() {
 
         found = arguments?.getBoolean("found") == true
 
-        var date: TextView = root.findViewById<TextView>(R.id.createReportLastSeenTextView)
+        var date: TextView = root.findViewById(R.id.createReportLastSeenTextView)
         if (found){
             date.text = resources.getString(R.string.pet_found_date)
         }

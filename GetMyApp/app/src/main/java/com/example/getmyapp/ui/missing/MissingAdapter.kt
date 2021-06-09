@@ -7,13 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.getmyapp.R
 import com.example.getmyapp.database.Pet
 import com.google.firebase.storage.FirebaseStorage
-import org.w3c.dom.Text
 
 class MissingAdapter(private val dataSet: ArrayList<Pet>) :
     RecyclerView.Adapter<MissingAdapter.ViewHolder>() {

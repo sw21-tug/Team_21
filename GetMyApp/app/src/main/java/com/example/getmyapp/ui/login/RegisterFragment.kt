@@ -52,7 +52,7 @@ class RegisterFragment : Fragment() {
 
         databaseUsers.addValueEventListener(userListener)
 
-        listOfUsers = ArrayList<User>()
+        listOfUsers = ArrayList()
 
         return root
     }
