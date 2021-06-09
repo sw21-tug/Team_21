@@ -9,7 +9,10 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.platform.app.InstrumentationRegistry
+import com.example.getmyapp.database.User
 import com.example.getmyapp.ui.missing.MissingFragment
+import com.example.getmyapp.utils.utils
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -31,6 +34,14 @@ class MissingFragmentUITest {
         val navController = TestNavHostController(
             ApplicationProvider.getApplicationContext()
         )
+
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+
+        val user = User("-Ma2sFCW-WSiE9LCeH7l", "loginState", "",
+                "", "loginState@mail.com", "",
+                "4Biwq1iQIoSnPTEeD8qm0bxb1/vFhfItOECuzMWBjJw=", "d11vy0H4Cu2AK8l5NHNVuA==")
+
+        utils.saveLoginState(context, user)
 
         launchFragmentInContainer(themeResId = R.style.Theme_AppCompat_Light) {
             MissingFragment().also { fragment ->

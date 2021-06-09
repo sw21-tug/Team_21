@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GetMyApp</string>
+    <string name="app_name">GetMyPet</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -113,6 +113,8 @@
     <string name="sample_colour">Grey</string>
     <string name="last_seen">Last Seen</string>
     <string name="sample_seen">01.01.2000</string>
+    <string name="image">Image:</string>
+    <string name="select_image">SELECT IMAGE</string>
 
     <string name="lang_en">English</string>
     <string name="lang_ru">русский</string>
@@ -142,6 +144,9 @@
     <string name="user_overview_no_last_name">No Last Name</string>
     <string name="user_overview_no_phone">No Phone Number</string>
     <string name="pet_found_date">Found on</string>
+    <string name="phone_image_button_content_description">Phone</string>
+    <string name="email_image_button_content_description">Email</string>
+    <string name="message_image_button_content_description">Message</string>
 
     <string name="icon">Contact Image Button</string>
 </resources>

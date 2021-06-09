@@ -1,10 +1,12 @@
 package com.example.getmyapp.ui.report
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.getmyapp.R
@@ -12,6 +14,8 @@ import com.example.getmyapp.database.Pet
 import com.example.getmyapp.utils.utils
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class AddReportFragment: Fragment() {
 
@@ -26,13 +30,21 @@ class AddReportFragment: Fragment() {
     private lateinit var gender: String
     private lateinit var lastSeen: String
     private lateinit var chipNumber: String
+    private var image: Uri? = null
+
+    private val selectImageResult = registerForActivityResult(ActivityResultContracts.GetContent()) {uri: Uri? ->
+        if (uri != null) {
+            image = uri
+        }
+    }
 
     private lateinit var databasePets: DatabaseReference
+    private lateinit var storagePets: StorageReference
 
     private var found: Boolean = false
-  
+
     private lateinit var root: View
-  
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,13 +61,17 @@ class AddReportFragment: Fragment() {
         }
 
         databasePets = FirebaseDatabase.getInstance().getReference("Pets")
+        storagePets = FirebaseStorage.getInstance().reference
 
-        saveButton = root.findViewById<Button>(R.id.saveButton)
+        saveButton = root.findViewById(R.id.saveButton)
         saveButton.setOnClickListener{ addPet() }
+
+        val selectImageButton = root.findViewById<Button>(R.id.selectImageButton)
+        selectImageButton.setOnClickListener { selectImageResult.launch("image/*") }
 
         found = arguments?.getBoolean("found") == true
 
-        var date: TextView = root.findViewById<TextView>(R.id.createReportLastSeenTextView)
+        var date: TextView = root.findViewById(R.id.createReportLastSeenTextView)
         if (found){
             date.text = resources.getString(R.string.pet_found_date)
         }
@@ -71,20 +87,23 @@ class AddReportFragment: Fragment() {
 
         val petId = databasePets.push().key
 
-        val user = utils.getLoginState(root.context)
-        if (user == null){
-            return
+        val user = utils.getLoginState(root.context) ?: return
+
+        if (image != null) {
+            val imageRef = storagePets.child("Pets/${petId}.jpeg")
+            imageRef.putFile(image!!)
         }
-        
+
+
         val pet = Pet(petId, chipNumber, name, species, breed, color, age, gender, user.userId, region, lastSeen, found)
-
-        if (petId != null) {
+        if (petId != null)
             databasePets.child(petId).setValue(pet)
-        }
 
 
-        if (found) findNavController().navigate(R.id.action_nav_add_report_to_nav_found)
-        else findNavController().navigate(R.id.action_nav_add_report_to_nav_missing)
+        if (found)
+            findNavController().navigate(R.id.action_nav_add_report_to_nav_found)
+        else
+            findNavController().navigate(R.id.action_nav_add_report_to_nav_missing)
     }
 
     private fun getInputData(): Boolean {

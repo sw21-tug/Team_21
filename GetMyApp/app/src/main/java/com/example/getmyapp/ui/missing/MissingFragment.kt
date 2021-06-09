@@ -16,7 +16,6 @@ import com.example.getmyapp.database.Pet
 import com.example.getmyapp.utils.utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
-import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
@@ -62,15 +61,15 @@ class MissingFragment : Fragment() {
                     android.R.layout.simple_spinner_item, region)
             regionSpinner.adapter = adapter
         }
+        addMissingPetButton = root.findViewById(R.id.addMissingPetButton)
 
-        val addButton: FloatingActionButton = root.findViewById(R.id.addMissingPetButton)
         val user = utils.getLoginState(root.context)
         if (user != null)
-            addButton.visibility = View.VISIBLE
+            addMissingPetButton.visibility = View.VISIBLE
         else
-            addButton.visibility = View.INVISIBLE
+            addMissingPetButton.visibility = View.INVISIBLE
 
-        recyclerView = root.findViewById<RecyclerView>(R.id.missingPetsRecyclerView)
+        recyclerView = root.findViewById(R.id.missingPetsRecyclerView)
 
         recyclerView.layoutManager = LinearLayoutManager(root.context)
 
@@ -78,9 +77,8 @@ class MissingFragment : Fragment() {
 
         databasePets.addValueEventListener(petListener)
 
-        listOfPets = ArrayList<Pet>()
+        listOfPets = ArrayList()
 
-        addMissingPetButton = root.findViewById<FloatingActionButton>(R.id.addMissingPetButton)
 
         addMissingPetButton.setOnClickListener {
             val bundle = bundleOf("found" to false)

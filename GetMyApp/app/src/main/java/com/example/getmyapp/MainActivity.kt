@@ -13,7 +13,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.getmyapp.utils.utils
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -68,6 +67,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
+        if (navController.previousBackStackEntry?.destination?.label == "Sign Up") {
+            navController.popBackStack()
+            navController.popBackStack()
+            navController.popBackStack()
+        }
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
