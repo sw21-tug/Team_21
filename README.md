@@ -18,9 +18,9 @@
 * Missing/Found pets overview
 * Show extended pet characteristic (report)
 * Create found/missing pet report
-  * Add picture to report
+: * Add picture to report
 * Search/Filter attributes on overview
-  * Add mock data to database
+: * Add mock data to database
 * Donation/in-app purchase
 * Open default app for calls/messages/e-mails
 * Menu
@@ -29,7 +29,7 @@
 * Menu 
 * Load and display current report previews
 * User Login View 
-  * Login State
+: * Login State
 * 2nd Language 
 * Data Access online
 * Missing Pets Overview - Revamp
