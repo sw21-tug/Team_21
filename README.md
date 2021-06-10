@@ -38,9 +38,9 @@
 
 
 <h1>Canceled User Stories</h1> 
-Message registered User
-Manage Ads
-Manage Users view
-Admin management overview
-Manage reports view
-Manage Ads View
+* Message registered User
+* Manage Ads
+* Manage Users view
+* Admin management overview
+* Manage reports view
+* Manage Ads View
