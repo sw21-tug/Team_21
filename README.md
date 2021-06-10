@@ -15,6 +15,7 @@
 * Developer: missing
 
 <h1>Done User Stories</h1> 
+
 * Missing/Found pets overview
 * Show extended pet characteristic (report)
 * Create found/missing pet report
@@ -38,6 +39,7 @@
 
 
 <h1>Canceled User Stories</h1> 
+
 * Message registered User
 * Manage Ads
 * Manage Users view
